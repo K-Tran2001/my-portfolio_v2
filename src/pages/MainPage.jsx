@@ -11,6 +11,9 @@ import {
   FaGithub,
   FaInstagramSquare,
 } from "react-icons/fa";
+import Blog from "./Blog";
+import Contact from "./Contact";
+import Pointer from "../components/Pointer";
 
 const MainPage = () => {
   const { t, changeLanguage, lang } = useTranslate();
@@ -27,12 +30,13 @@ const MainPage = () => {
     var menuBtn = document.getElementById("myNavMenu");
     menuBtn.className = "nav-menu";
   }
-  const navData = ["Home", "About", "Skills", "Case_Study", "Projects"];
+  const navData = ["Home", "About", "Skills", "Projects", "Blog", "Contact"];
   const [tab, setTab] = useState("Home");
 
   return (
     <div className="">
       {/* <!-- --------------- HEADER --------------- --> */}
+      <Pointer />
       <nav
         id="header"
         className="w-full h-[80px] bg-[var(--body-color)] flex itams-center px-16 justify-between sticky top-0 z-10"
@@ -70,6 +74,8 @@ const MainPage = () => {
         {tab === "About" && <About />}
         {tab === "Skills" && <Skills />}
         {tab === "Projects" && <Projects />}
+        {tab === "Blog" && <Blog />}
+        {tab === "Contact" && <Contact />}
       </div>
       {/* <!-- --------------- FOOTER --------------- --> */}
       <footer className="px-16 py-8 flex flex-col justify-center items-center gap-8 bg-[#F8F8F8]">
