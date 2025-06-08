@@ -13,11 +13,13 @@ import { GiMagicHat } from "react-icons/gi"; // dùng cho Magnus UI
 import { FaGithub } from "react-icons/fa";
 import { SiAdobephotoshop, SiFigma, SiSubversion } from "react-icons/si";
 import { BiLogoVisualStudio } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 import creativityImg from "../assets/images/creativity.jpg";
 import collaborationImg from "../assets/images/collaboration.jpg";
 import communicationImg from "../assets/images/communication.jpg";
 import time_managementImg from "../assets/images/time_management.jpg";
+import { fadeIn } from "../components/framerMotion/variants";
 const Skills = () => {
   const listTool = [
     {
@@ -162,23 +164,26 @@ const Skills = () => {
         <div className="py-8 flex flex-col justify-center items-center">
           <div class=" bg-[url('https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg')] bg-cover bg-center text-transparent bg-clip-text ">
             <div className="flex items-center">
-              <div class="text-black   -rotate-90 text-orange-500 text-[7em]  font-bold flex items-center justify-center leading-none">
+              <div class="text-black   -rotate-90 text-orange-500 text-[4em] md:text-[7em]  font-bold flex items-center justify-center leading-none">
                 MY
               </div>
 
-              <div className=" leading-none text-[12em] font-bold"> SKILLS</div>
+              <div className=" leading-none text-[6em] md:text-[12em] font-bold">
+                {" "}
+                SKILLS
+              </div>
             </div>
           </div>
           <h3>"Behind every pixel, there's a purpose."</h3>
         </div>
       </div>
-      <div className=" p-8 px-8 md:px-32   mt-8">
+      <div className=" p-8 px-8 md:px-32   mt-8  ">
         <h2 className="font-medium text-center">Tools and Platforms</h2>
         <h2 className="text-center text-sm text-gray-500 mb-10">
           Here are the tools and platforms I regularly use to bring ideas to
           life - form wireframes to polished UI designs
         </h2>
-        <div className="flex gap-2 flex-wrap justify-center ">
+        <div className="flex gap-2 flex-wrap justify-center animate-left-right">
           {listTool.map((tool) => (
             <div
               className="p-4 px-8 flex gap-4 items-center border border-gray-100 rounded-lg shadow-sm hover:shadow-lg"
@@ -199,7 +204,7 @@ const Skills = () => {
         <div className="flex gap-2 flex-wrap justify-center ">
           {listLibrary_Tech.map((tool) => (
             <div
-              className="p-4 px-8 flex gap-4 items-center border border-gray-100 rounded-lg shadow-sm hover:shadow-lg"
+              className="p-4 px-8 flex gap-4 items-center border border-gray-100 rounded-lg shadow-sm hover:shadow-lg animate-left-right"
               key={tool.id}
             >
               {tool.icon}
@@ -208,52 +213,68 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      <div className=" p-8 px-8 md:px-32   mt-8">
-        <h2 className="font-medium text-center">What I bring to the table?</h2>
-        <p className="text-center text-sm text-gray-500 mb-10">
-          My personal traits
-        </p>
-        <div className="max-w-6xl mx-auto px-4 py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {softSkills.map((skill, index) => (
-              <div
-                key={index}
-                className="bg-white shadow-md hover:shadow-xl rounded-2xl overflow-hidden transition duration-300"
-              >
-                <img
-                  src={skill.image}
-                  alt={skill.title}
-                  className="h-40 w-full object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+      <motion.div
+        variants={fadeIn("up", 0)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.1 }}
+      >
+        <div className=" p-8 px-8 md:px-32   mt-8">
+          <h2 className="font-medium text-center">
+            What I bring to the table?
+          </h2>
+          <p className="text-center text-sm text-gray-500 mb-10">
+            My personal traits
+          </p>
+          <div className="max-w-6xl mx-auto px-4 py-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {softSkills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="bg-white shadow-md hover:shadow-xl rounded-2xl overflow-hidden transition duration-300"
+                >
+                  <img
+                    src={skill.image}
+                    alt={skill.title}
+                    className="h-40 w-full object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      {skill.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm">{skill.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+      <motion.div
+        variants={fadeIn("up", 0)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.1 }}
+      >
+        <div className=" p-8 px-8 md:px-32  mt-8">
+          <h2 className="font-medium text-center">Hard skills</h2>
+          <p className="text-center text-sm text-gray-500 mb-10">
+            Technical abilities
+          </p>
+          <section className="max-w-6xl mx-auto px-4 py-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {hardSkills.map((skill, index) => (
+                <div key={index} className="border-l-4 border-cyan-500 pl-4">
+                  <h3 className="font-semibold uppercase text-gray-800 text-sm mb-1">
                     {skill.title}
                   </h3>
                   <p className="text-gray-600 text-sm">{skill.description}</p>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </section>
         </div>
-      </div>
-      <div className=" p-8 px-8 md:px-32  mt-8">
-        <h2 className="font-medium text-center">Hard skills</h2>
-        <p className="text-center text-sm text-gray-500 mb-10">
-          Technical abilities
-        </p>
-        <section className="max-w-6xl mx-auto px-4 py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {hardSkills.map((skill, index) => (
-              <div key={index} className="border-l-4 border-cyan-500 pl-4">
-                <h3 className="font-semibold uppercase text-gray-800 text-sm mb-1">
-                  {skill.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{skill.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -25,13 +25,13 @@ export default function Blog() {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <h1 className="text-4xl font-black text-blue-700 leading-tight mb-6">
+          <h1 className="text-4xl font-sans font-bold text-blue-700 leading-tight mb-6">
             💻 Code là đam mê
           </h1>
           <blockquote className="italic text-gray-600 text-lg border-l-4 border-blue-300 pl-4">
             “Chúng ta không chỉ code để sống, mà đang sống để được code.”
           </blockquote>
-          <div className="absolute left-[30px] top-[140px]  animate-up-down  w-64 h-64">
+          <div className="hidden md:block absolute left-[30px] top-[140px]  animate-up-down  w-64 h-64">
             <img
               src="https://res.cloudinary.com/dd0qffuvy/image/upload/v1749356962/coder3-removebg-preview_zfdvna.png"
               alt=""
@@ -111,7 +111,7 @@ function Section({ title, children }) {
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-xl font-bold text-blue-600">{title}</h2>
+      <h2 className="text-xl font-sans font-bold text-blue-600">{title}</h2>
       {children}
     </motion.section>
   );

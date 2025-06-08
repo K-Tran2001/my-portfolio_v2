@@ -14,6 +14,7 @@ import {
 import Blog from "./Blog";
 import Contact from "./Contact";
 import Pointer from "../components/Pointer";
+import { PiList } from "react-icons/pi";
 
 const MainPage = () => {
   const { t, changeLanguage, lang } = useTranslate();
@@ -43,7 +44,7 @@ const MainPage = () => {
       >
         <div className="relative flex gap-2 items-center">
           <p className="text-3xl font-bold text-[var(--text-color-third)]">
-            Portfolio
+            KhoaTran
           </p>
           <span className=" text-4xl">.</span>
         </div>
@@ -61,11 +62,13 @@ const MainPage = () => {
             ))}
           </div>
         </div>
-        <Select callback={(e) => changeLanguage(e)} />
+        <div className="hidden md:block">
+          <Select callback={(e) => changeLanguage(e)} />
+        </div>
 
         <div className="block md:hidden flex items-center">
           {/* <i className="font-xl" onClick={myMenuFunction}></i> */}
-          |||
+          <PiList size={32} />
         </div>
       </nav>
       {/* <!-- --------------- MAIN --------------- --> */}

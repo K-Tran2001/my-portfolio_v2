@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import bangkeo from "../assets/bang_keo.png";
+import { fadeIn } from "../components/framerMotion/variants";
+import { motion } from "framer-motion";
 const About = () => {
   const [expand, setExpand] = useState(false);
   useEffect(() => {
@@ -70,63 +72,93 @@ const About = () => {
         </div>
         <div className="mt-16 md:px-8">
           <h3 className="font-bold">-EDUCATION-</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-16">
-            <div className="p-8 rounded-2xl shadow-lg ">
-              <div className="font-bold">
-                An Giang University - Vietnam National University, Ho Chi Minh
-                City
+          <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-16 mt-4">
+            <motion.div
+              variants={fadeIn("right", 0)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.1 }}
+            >
+              <div className="p-8 rounded-2xl shadow-lg ">
+                <div className="font-bold">
+                  An Giang University - Vietnam National University, Ho Chi Minh
+                  City
+                </div>
+                <div className="text-end">2019-2023</div>
+                <div>
+                  <div>
+                    - Well-trained in building and managing modern websites,
+                    organizing and storing data.
+                  </div>
+                  <div>
+                    - Mastering data structures and algorithms to apply them in
+                    solving real-world problems.
+                  </div>
+                </div>
               </div>
-              <div className="text-end">2019-2023</div>
+            </motion.div>
+            <motion.div
+              variants={fadeIn("down", 0)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.1 }}
+            >
               <div>
                 <div>
-                  - Well-trained in building and managing modern websites,
-                  organizing and storing data.
-                </div>
-                <div>
-                  - Mastering data structures and algorithms to apply them in
-                  solving real-world problems.
+                  <h3 className="font-bold">Progress</h3>
+                  <div>
+                    - Ranked among the top of the class with excellent academic
+                    performance (GPA: 3.68), achieving perfect scores in
+                    programming and OOP courses.
+                  </div>
+                  - Consistently received merit-based scholarships from the
+                  university and the Doan Toi Scholarship for several
+                  consecutive years.
                 </div>
               </div>
-            </div>
-            <div>
-              <div>
-                <h3 className="font-bold">Progress</h3>
-                <div>
-                  - Ranked among the top of the class with excellent academic
-                  performance (GPA: 3.68), achieving perfect scores in
-                  programming and OOP courses.
-                </div>
-                - Consistently received merit-based scholarships from the
-                university and the Doan Toi Scholarship for several consecutive
-                years.
-              </div>
-            </div>
+            </motion.div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-8">
-            <div className="order-2 md:order-1">
-              <div>
-                <h3 className="font-bold">Progress</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-16 mt-4">
+            <motion.div
+              variants={fadeIn("up", 0)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.1 }}
+              className="order-2 md:order-1"
+            >
+              <div className="">
                 <div>
-                  The website helps promote products and attract more customers,
-                  increasing awareness of the company's products and services.
-                  It offers all the features and functionalities of a complete
-                  e-commerce site.
-                </div>
-                Technologies Used:
-              </div>
-            </div>
-            <div className="p-8 rounded-2xl shadow-lg order-1 md:order-2">
-              <div className="font-bold">TPONE COMPANY LIMITED</div>
-              <div className="text-end">02/2023 - 04/2023</div>
-              <div>
-                <div>
-                  Topic: Building a Pharmaceutical Sales Website for Clinics The
-                  website was completed ahead of schedule and met all the
-                  functionalities required for a fully functional e-commerce
-                  platform.
+                  <h3 className="font-bold">Progress</h3>
+                  <div>
+                    The website helps promote products and attract more
+                    customers, increasing awareness of the company's products
+                    and services. It offers all the features and functionalities
+                    of a complete e-commerce site.
+                  </div>
+                  Technologies Used:
                 </div>
               </div>
-            </div>
+            </motion.div>
+            <motion.div
+              variants={fadeIn("left", 0)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.1 }}
+              className="order-1 md:order-2"
+            >
+              <div className="p-8 rounded-2xl shadow-lg ">
+                <div className="font-bold">TPONE COMPANY LIMITED</div>
+                <div className="text-end">02/2023 - 04/2023</div>
+                <div>
+                  <div>
+                    Topic: Building a Pharmaceutical Sales Website for Clinics
+                    The website was completed ahead of schedule and met all the
+                    functionalities required for a fully functional e-commerce
+                    platform.
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
         <div className="mt-16 md:px-8">
