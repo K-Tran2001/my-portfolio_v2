@@ -17,9 +17,13 @@ import Pointer from "../components/Pointer";
 import { PiList } from "react-icons/pi";
 import Backdrop from "../components/Backdrop";
 import Particle from "../components/Particle";
+import Drawer from "../components/Drawer";
+import { MainContext } from "../context/MainContext";
 
 const MainPage = () => {
   const { t, changeLanguage, lang } = useTranslate();
+  const context = React.useContext(MainContext);
+  const { drawer, setDrawer } = context;
   function myMenuFunction() {
     var menuBtn = document.getElementById("myNavMenu");
 
@@ -45,7 +49,7 @@ const MainPage = () => {
       {/* <Backdrop /> */}
       <nav
         id="header"
-        className="w-full h-[80px] bg-[var(--body-color)] flex itams-center px-16 justify-between sticky top-0 z-10"
+        className="z-0 w-full h-[80px] bg-[var(--body-color)] flex itams-center px-16 justify-between sticky top-0 z-10"
       >
         <div className="relative flex gap-2 items-center">
           <p className="text-3xl font-bold text-[var(--text-color-third)]">
@@ -53,7 +57,7 @@ const MainPage = () => {
           </p>
           <span className=" text-4xl">.</span>
         </div>
-        <div className="flex-1 hidden md:block" id="myNavMenu">
+        <div className="flex-1 hidden md:block " id="myNavMenu">
           <div className="h-full flex justify-center gap-4 items-center ">
             {navData.map((item) => (
               <a
@@ -67,15 +71,19 @@ const MainPage = () => {
             ))}
           </div>
         </div>
-        <div className="hidden md:block">
-          <Select callback={(e) => changeLanguage(e)} />
-        </div>
 
-        <div className="block md:hidden flex items-center">
+        <div
+          className="block md:hidden flex items-center"
+          onClick={() =>
+            setDrawer({ ...drawer, isOpen: true, position: "rightDrawer" })
+          }
+        >
           {/* <i className="font-xl" onClick={myMenuFunction}></i> */}
           <PiList size={32} />
         </div>
       </nav>
+      {/* ----NAV MOBILE---- */}
+
       {/* <!-- --------------- MAIN --------------- --> */}
       <div className="">
         {tab === "Home" && <Home />}
@@ -146,6 +154,26 @@ const MainPage = () => {
           </p>
         </div>
       </footer>
+      <Drawer>
+        <div className="  ">
+          <div className=" h-[100vh-80px]   flex flex-col  items-center gap-4 py-8">
+            {navData.map((item) => (
+              <a
+                className={`${
+                  tab === item && "bg-black text-white"
+                } p-1 px-3 hover:bg-black hover:text-white rounded-full font-medium cursor-pointer`}
+                onClick={() => {
+                  setDrawer({ ...drawer, isOpen: false });
+                  setTab(item);
+                }}
+              >
+                {item}
+              </a>
+            ))}
+            <Select callback={(e) => changeLanguage(e)} />
+          </div>
+        </div>
+      </Drawer>
     </div>
   );
 };

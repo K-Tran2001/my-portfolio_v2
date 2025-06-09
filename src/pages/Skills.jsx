@@ -169,7 +169,7 @@ const Skills = () => {
                 MY
               </div>
 
-              <div className=" leading-none text-[6em] md:text-[12em] font-bold">
+              <div className=" leading-none text-[5em] md:text-[12em] font-bold">
                 {" "}
                 SKILLS
               </div>
