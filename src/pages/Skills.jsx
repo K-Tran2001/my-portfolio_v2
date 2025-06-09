@@ -20,6 +20,7 @@ import collaborationImg from "../assets/images/collaboration.jpg";
 import communicationImg from "../assets/images/communication.jpg";
 import time_managementImg from "../assets/images/time_management.jpg";
 import { fadeIn } from "../components/framerMotion/variants";
+
 const Skills = () => {
   const listTool = [
     {
@@ -177,19 +178,19 @@ const Skills = () => {
           <h3>"Behind every pixel, there's a purpose."</h3>
         </div>
       </div>
-      <div className=" p-8 px-8 md:px-32   mt-8  ">
+      <div className=" p-8 px-8 md:px-32   mt-8 ">
         <h2 className="font-medium text-center">Tools and Platforms</h2>
         <h2 className="text-center text-sm text-gray-500 mb-10">
           Here are the tools and platforms I regularly use to bring ideas to
           life - form wireframes to polished UI designs
         </h2>
-        <div className="flex gap-2 flex-wrap justify-center animate-left-right">
+        <div className="flex gap-2 flex-wrap justify-center ">
           {listTool.map((tool) => (
             <div
-              className="p-4 px-8 flex gap-4 items-center border border-gray-100 rounded-lg shadow-sm hover:shadow-lg"
+              className="bg-white p-4 px-8 flex gap-4 items-center border border-gray-100 rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech"
               key={tool.id}
             >
-              {tool.icon}
+              <div className="item__tech__icon">{tool.icon}</div>
               <h1>{tool.name}</h1>
             </div>
           ))}
@@ -204,10 +205,10 @@ const Skills = () => {
         <div className="flex gap-2 flex-wrap justify-center ">
           {listLibrary_Tech.map((tool) => (
             <div
-              className="p-4 px-8 flex gap-4 items-center border border-gray-100 rounded-lg shadow-sm hover:shadow-lg animate-left-right"
+              className="bg-white p-4 px-8 flex gap-4 items-center border border-gray-100 rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech"
               key={tool.id}
             >
-              {tool.icon}
+              <div className="item__tech__icon">{tool.icon}</div>
               <h1 className="">{tool.name}</h1>
             </div>
           ))}
@@ -239,7 +240,7 @@ const Skills = () => {
                     className="h-40 w-full object-cover"
                   />
                   <div className="p-4">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2 pb-4">
                       {skill.title}
                     </h3>
                     <p className="text-gray-600 text-sm">{skill.description}</p>
@@ -264,7 +265,10 @@ const Skills = () => {
           <section className="max-w-6xl mx-auto px-4 py-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {hardSkills.map((skill, index) => (
-                <div key={index} className="border-l-4 border-cyan-500 pl-4">
+                <div
+                  key={index}
+                  className="bg-white border-l-4 border-cyan-500 pl-4 py-2"
+                >
                   <h3 className="font-semibold uppercase text-gray-800 text-sm mb-1">
                     {skill.title}
                   </h3>

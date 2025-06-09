@@ -4,7 +4,7 @@ import FlyingShip_2 from "../components/FlyingShip_2";
 
 export default function Blog() {
   return (
-    <div className="relative min-h-screen bg-[#f9fafb] py-16 px-6 sm:px-12 md:px-24 text-gray-800 font-sans">
+    <div className="relative min-h-screen  py-16 px-6 sm:px-12 md:px-24 text-gray-800 font-sans">
       {/* Decorative Floating Bubbles */}
       <div className="absolute top-10 right-10 w-40 h-40 bg-purple-200 rounded-full blur-3xl opacity-30 animate-pulse" />
       <div className="absolute bottom-0 left-0 w-60 h-60 bg-cyan-200 rounded-full blur-3xl opacity-30 animate-ping" />
@@ -26,11 +26,12 @@ export default function Blog() {
           }}
         >
           <h1 className="text-4xl font-sans font-bold text-blue-700 leading-tight mb-6">
-            💻 Code là đam mê
+            💻 Code is Passion
           </h1>
           <blockquote className="italic text-gray-600 text-lg border-l-4 border-blue-300 pl-4">
-            “Chúng ta không chỉ code để sống, mà đang sống để được code.”
+            “We don't just code to live, we live to code.”
           </blockquote>
+
           <div className="hidden md:block absolute left-[30px] top-[140px]  animate-up-down  w-64 h-64">
             <img
               src="https://res.cloudinary.com/dd0qffuvy/image/upload/v1749356962/coder3-removebg-preview_zfdvna.png"
@@ -42,58 +43,59 @@ export default function Blog() {
 
         {/* Right: Blog content */}
         <motion.div
-          className="space-y-10"
+          className="space-y-10 bg-white px-8 "
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <Section title="✨ Dòng code đầu tiên">
+          <Section title="✨ My First Line of Code">
             <p>
-              Tôi vẫn nhớ lần đầu gõ <Code>console.log("Hello World")</Code>.
-              Dòng chữ nhỏ đó làm tôi phấn khích – như thể mình có thể nói
-              chuyện với máy tính lần đầu tiên.
+              I still remember the first time I typed{" "}
+              <Code>console.log("Hello World")</Code>. That tiny line made me
+              thrilled – like I was speaking to a computer for the very first
+              time.
             </p>
             <FloatingNote>
-              “Code là ngôn ngữ của sáng tạo kỹ thuật số.”
+              “Code is the language of digital creativity.”
             </FloatingNote>
           </Section>
 
-          <Section title="🧠 Code cũng là nghệ thuật">
+          <Section title="🧠 Code is also an Art">
             <ul className="list-disc list-inside space-y-2 text-gray-700">
               <li>
-                <strong>UI mượt mà</strong> là thẩm mỹ.
+                <strong>Smooth UI</strong> is aesthetic.
               </li>
               <li>
-                <strong>Hiệu suất tối ưu</strong> là sự tinh tế.
+                <strong>Optimized performance</strong> is finesse.
               </li>
               <li>
-                <strong>Kiến trúc rõ ràng</strong> là tư duy có chiều sâu.
+                <strong>Clear architecture</strong> is deep thinking.
               </li>
             </ul>
           </Section>
 
-          <Section title="⚙️ Những đêm trắng... nhưng vui">
+          <Section title="⚙️ Sleepless Nights... Yet Joyful">
             <p>
-              Tôi từng fix bug đến 2–3h sáng. Không ai ép – tôi chỉ muốn nó
-              chạy. Những lúc đó, tôi nhận ra: mình đang làm điều mình yêu.
+              I used to fix bugs until 2–3 a.m. No one forced me – I just wanted
+              it to run. That’s when I realized: I’m doing what I love.
             </p>
           </Section>
 
-          <Section title="🔥 Giữ lửa đam mê">
+          <Section title="🔥 Keep the Passion Burning">
             <p>
-              Có những lúc mệt, muốn bỏ cuộc. Nhưng mỗi lần build xong một tính
-              năng, thấy user khen một câu “dùng sướng ghê”, tôi lại thấy xứng
-              đáng.
+              There were times I felt tired and wanted to give up. But every
+              time I finished building a feature and heard a user say “this is
+              so smooth,” it felt worth it.
             </p>
           </Section>
 
-          <Section title="💬 Kết lại">
+          <Section title="💬 Final Thoughts">
             <p>
-              <strong>Code là công cụ. Đam mê là nhiên liệu.</strong>
+              <strong>Code is the tool. Passion is the fuel.</strong>
               <br />
-              Nếu bạn đam mê, hãy giữ lửa. Hành trình lập trình luôn có chông
-              gai, nhưng cũng đầy niềm vui sáng tạo.
+              If you’re passionate, keep the fire alive. The coding journey has
+              its ups and downs, but it’s filled with creative joy.
             </p>
           </Section>
         </motion.div>

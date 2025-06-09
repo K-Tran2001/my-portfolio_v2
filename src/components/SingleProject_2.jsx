@@ -2,7 +2,17 @@ import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "./framerMotion/variants";
 
-const SingleProject_2 = ({ name, type, year, align, image, link }) => {
+const SingleProject_2 = ({
+  name,
+  type,
+  year,
+  align,
+  image,
+  link,
+  description,
+  short_description,
+  long_description,
+}) => {
   return (
     <motion.div
       variants={fadeIn("top", 0)}
@@ -14,19 +24,15 @@ const SingleProject_2 = ({ name, type, year, align, image, link }) => {
       } justify-end sm:flex-col `}
     >
       <div
-        class={`flex flex-col md:flex-row items-center justify-between bg-gradient-to-b from-white to-gray-100  rounded-3xl shadow-md max-w-6xl mx-auto ${
-          align == "left"
-            ? "-rotate-[5deg] transition-transform duration-300"
-            : "rotate-[5deg] transition-transform duration-300"
-        }`}
+        class={`flex flex-col md:flex-row items-center justify-between bg-gradient-to-b from-white to-gray-100  rounded-3xl shadow-md max-w-6xl mx-auto card__project`}
       >
         <div
-          class={`flex items-center justify-center w-full md:w-1/2 mb-8 md:mb-0`}
+          class={`flex items-center justify-center w-full md:w-1/2 mb-8 md:mb-0 card__project__left rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl`}
         >
           <img
             src={image}
             alt="Project Preview"
-            class="w-full max-h-96 rounded-t-3xl md:rounded-l-3xl"
+            class="w-full max-h-96 "
             style={{ objectFit: "cover" }}
           />
         </div>
@@ -36,12 +42,7 @@ const SingleProject_2 = ({ name, type, year, align, image, link }) => {
             {type}
           </div>
           <h3 class="text-xl font-semibold text-blue-600 mb-2">{name}</h3>
-          <p class="text-gray-600 mb-6 text-sm">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
-            explicabo aut, quae aliquam obcaecati vitae in, nemo saepe
-            consequuntur omnis hic enim, quod ab harum nostrum repudiandae est
-            non eligendi?
-          </p>
+          <p class="text-gray-600 mb-6 text-sm">{description}</p>
           <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
             <a
               href="#"

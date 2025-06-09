@@ -15,6 +15,8 @@ import Blog from "./Blog";
 import Contact from "./Contact";
 import Pointer from "../components/Pointer";
 import { PiList } from "react-icons/pi";
+import Backdrop from "../components/Backdrop";
+import Particle from "../components/Particle";
 
 const MainPage = () => {
   const { t, changeLanguage, lang } = useTranslate();
@@ -37,7 +39,10 @@ const MainPage = () => {
   return (
     <div className="">
       {/* <!-- --------------- HEADER --------------- --> */}
+
       <Pointer />
+      <Particle />
+      {/* <Backdrop /> */}
       <nav
         id="header"
         className="w-full h-[80px] bg-[var(--body-color)] flex itams-center px-16 justify-between sticky top-0 z-10"
@@ -81,7 +86,7 @@ const MainPage = () => {
         {tab === "Contact" && <Contact />}
       </div>
       {/* <!-- --------------- FOOTER --------------- --> */}
-      <footer className="px-16 py-8 flex flex-col justify-center items-center gap-8 bg-[#F8F8F8]">
+      <footer className="px-16 py-8 flex flex-col justify-center items-center gap-8 bg-[#F8F8F8] fotter__box">
         <div className="">
           <p className="text-xl font-medium">Khoa Tran</p>
         </div>

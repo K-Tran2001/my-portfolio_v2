@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import cvFile from "../assets/TranVanKhoa - Frontend Developer.pdf";
 
 const Home = () => {
@@ -20,7 +20,9 @@ const Home = () => {
       <div className="bg-yellow-300 flex flex-col-reverse  items-center justify-center md:flex-row  md:items-start py-8 md:py-12 px-6 md:px-32 h-full gap-8">
         {/* Left content */}
         <div className=" flex flex-col justify-center text-center md:text-left  h-full m-auto">
-          <div className="italic font-semibold">I'm Van Khoa - an aspiring</div>
+          <div className="italic font-semibold ">
+            I'm Van Khoa - an aspiring
+          </div>
 
           <div className="flex justify-center md:justify-start items-center gap-2 flex-wrap">
             <div className="text-3xl md:text-6xl font-bold text-[var(--third-color)]">
@@ -53,7 +55,7 @@ const Home = () => {
             <img
               src="https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg"
               alt="Profile"
-              className=" shadow-lg w-full w-[250px] h-[250px] rounded-full md:w-[360px] md:h-[480px] md:rounded-2xl object-cover"
+              className=" shadow-lg  w-[250px] h-[250px] rounded-full md:w-[360px] md:h-[480px] md:rounded-2xl"
             />
           </div>
         </div>

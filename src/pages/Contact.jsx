@@ -3,7 +3,7 @@ import { fadeIn } from "../components/framerMotion/variants";
 import { motion } from "framer-motion";
 const Contact = () => {
   return (
-    <section class="bg-white py-16 px-6 sm:px-12 lg:px-24">
+    <section class=" py-16 px-6 sm:px-12 lg:px-24">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800">Get in touch</h2>
         <p>
