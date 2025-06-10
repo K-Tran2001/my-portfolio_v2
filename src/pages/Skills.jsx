@@ -165,7 +165,7 @@ const Skills = () => {
         <div className="py-8 flex flex-col justify-center items-center">
           <div class=" bg-[url('https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg')] bg-cover bg-center text-transparent bg-clip-text ">
             <div className="flex items-center">
-              <div class="text-black   -rotate-90 text-orange-500 text-[4em] md:text-[7em]  font-bold flex items-center justify-center leading-none">
+              <div class="text-black   -rotate-90 text-orange-500 text-[3em] md:text-[7em]  font-bold flex items-center justify-center leading-none">
                 MY
               </div>
 

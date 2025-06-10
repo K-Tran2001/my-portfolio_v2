@@ -20,6 +20,8 @@ import Particle from "../components/Particle";
 import Drawer from "../components/Drawer";
 import { MainContext } from "../context/MainContext";
 
+import { IoCloseOutline } from "react-icons/io5";
+
 const MainPage = () => {
   const { t, changeLanguage, lang } = useTranslate();
   const context = React.useContext(MainContext);
@@ -46,10 +48,11 @@ const MainPage = () => {
 
       <Pointer />
       <Particle />
+
       {/* <Backdrop /> */}
       <nav
         id="header"
-        className="z-0 w-full h-[80px] bg-[var(--body-color)] flex itams-center px-16 justify-between sticky top-0 z-10"
+        className="w-full h-[80px] bg-[var(--body-color)] flex itams-center px-16 justify-between sticky top-0 z-10"
       >
         <div className="relative flex gap-2 items-center">
           <p className="text-3xl font-bold text-[var(--text-color-third)]">
@@ -71,15 +74,21 @@ const MainPage = () => {
             ))}
           </div>
         </div>
-
+        <div className="hidden md:block">
+          <Select callback={(e) => changeLanguage(e)} />
+        </div>
         <div
           className="block md:hidden flex items-center"
           onClick={() =>
-            setDrawer({ ...drawer, isOpen: true, position: "rightDrawer" })
+            setDrawer({
+              ...drawer,
+              isOpen: !drawer.isOpen,
+              position: "rightDrawer",
+            })
           }
         >
           {/* <i className="font-xl" onClick={myMenuFunction}></i> */}
-          <PiList size={32} />
+          {!drawer.isOpen ? <PiList size={32} /> : <IoCloseOutline size={32} />}
         </div>
       </nav>
       {/* ----NAV MOBILE---- */}
@@ -154,6 +163,7 @@ const MainPage = () => {
           </p>
         </div>
       </footer>
+
       <Drawer>
         <div className="  ">
           <div className=" h-[100vh-80px]   flex flex-col  items-center gap-4 py-8">
