@@ -3,6 +3,7 @@ import bangkeo from "../assets/bang_keo.png";
 import { fadeIn } from "../components/framerMotion/variants";
 import { motion } from "framer-motion";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
+import AutoSlider from "../components/AutoSlider/AutoSlider";
 const About = () => {
   const [expand, setExpand] = useState(false);
   useEffect(() => {
@@ -225,6 +226,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <AutoSlider />
     </div>
   );
 };
