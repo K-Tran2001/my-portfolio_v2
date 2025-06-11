@@ -13,9 +13,7 @@ export default function Particle() {
     });
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    // console.log(container);
-  }, []);
+  const particlesLoaded = useCallback(async (container) => {}, []);
 
   return (
     <>

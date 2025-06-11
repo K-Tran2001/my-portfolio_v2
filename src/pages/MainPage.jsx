@@ -48,7 +48,25 @@ const MainPage = () => {
 
       <Pointer />
       <Particle />
-
+      <Drawer>
+        <div className=" h-[100vh-80px]   flex flex-col  items-center gap-4 py-8">
+          {navData.map((item) => (
+            <a
+              key={Math.random()}
+              className={`${
+                tab === item && "bg-black text-white"
+              } p-1 px-3 hover:bg-black hover:text-white rounded-full font-medium cursor-pointer`}
+              onClick={() => {
+                setDrawer({ ...drawer, isOpen: false });
+                setTab(item);
+              }}
+            >
+              {item}
+            </a>
+          ))}
+          <Select callback={(e) => changeLanguage(e)} />
+        </div>
+      </Drawer>
       {/* <Backdrop /> */}
       <nav
         id="header"
@@ -64,6 +82,7 @@ const MainPage = () => {
           <div className="h-full flex justify-center gap-4 items-center ">
             {navData.map((item) => (
               <a
+                key={Math.random()}
                 className={`${
                   tab === item && "bg-black text-white"
                 } p-1 px-3 hover:bg-black hover:text-white rounded-full font-medium cursor-pointer`}
@@ -108,9 +127,13 @@ const MainPage = () => {
           <p className="text-xl font-medium">Khoa Tran</p>
         </div>
         <div className="">
-          <ul className="flex justify-center items-center">
+          <ul className="flex justify-center items-center ">
             {navData.map((item) => (
-              <li className="px-4 cursor-pointer" onClick={() => setTab(item)}>
+              <li
+                key={Math.random()}
+                className="px-4 cursor-pointer text-sm md:text-lg"
+                onClick={() => setTab(item)}
+              >
                 {item}
               </li>
             ))}
@@ -157,33 +180,12 @@ const MainPage = () => {
           </a>
         </div>
         <div className="bottom-footer">
-          <p>
+          <p className="text-sm md:text-lg">
             {"Copy right"} &copy; <a href="#home">Khoa Tran</a> -{" "}
             {"All rights reserved"}
           </p>
         </div>
       </footer>
-
-      <Drawer>
-        <div className="  ">
-          <div className=" h-[100vh-80px]   flex flex-col  items-center gap-4 py-8">
-            {navData.map((item) => (
-              <a
-                className={`${
-                  tab === item && "bg-black text-white"
-                } p-1 px-3 hover:bg-black hover:text-white rounded-full font-medium cursor-pointer`}
-                onClick={() => {
-                  setDrawer({ ...drawer, isOpen: false });
-                  setTab(item);
-                }}
-              >
-                {item}
-              </a>
-            ))}
-            <Select callback={(e) => changeLanguage(e)} />
-          </div>
-        </div>
-      </Drawer>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBagShopping } from "react-icons/fa6";
 import { FiUsers } from "react-icons/fi";
 import { SiOpenbadges } from "react-icons/si";
@@ -7,7 +7,12 @@ import SingleProject_2 from "../components/SingleProject_2";
 import { fadeIn } from "../components/framerMotion/variants";
 import { motion } from "framer-motion";
 import Counter from "../components/Counter";
+import SingleProject_v3 from "../components/SingleProject_v3";
+import SliderProject_Card from "../components/SliderProject_Card/SliderProject_Card";
+import SingleProject_v4 from "../components/SingleProject_v4";
+
 const Projects = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const listAchievement = [
     {
       title: "Completed",
@@ -26,51 +31,6 @@ const Projects = () => {
       number: 2,
       description: "Years in the field",
       icon: <SiOpenbadges size={32} />,
-    },
-  ];
-
-  const listProject = [
-    {
-      title: "Squid Game Loaders",
-      description:
-        "Creative CSS loaders inspired by Squid Game visuals. Used to enhance website loading experiences.",
-      tech: ["HTML", "CSS", "Animations"],
-      imageUrl: "https://via.placeholder.com/300x200?text=Squid+Game+Loaders",
-    },
-    {
-      title: "Weather App",
-      description:
-        "A real-time weather app using OpenWeatherMap API. Shows current weather and 5-day forecast.",
-      tech: ["React", "Tailwind", "API"],
-      imageUrl: "https://via.placeholder.com/300x200?text=Weather+App",
-    },
-    {
-      title: "Portfolio Website",
-      description:
-        "Personal portfolio website showcasing projects, skills, and contact form.",
-      tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      imageUrl: "https://via.placeholder.com/300x200?text=Portfolio+Site",
-    },
-    {
-      title: "E-Commerce Dashboard",
-      description:
-        "Admin dashboard to manage products, orders, and users. Includes charts and filtering.",
-      tech: ["React", "Chart.js", "Firebase"],
-      imageUrl: "https://via.placeholder.com/300x200?text=E-Commerce+Dashboard",
-    },
-    {
-      title: "Chat Application",
-      description:
-        "Real-time chat app with authentication and message storage using Firebase.",
-      tech: ["React", "Firebase", "Tailwind"],
-      imageUrl: "https://via.placeholder.com/300x200?text=Chat+App",
-    },
-    {
-      title: "Blog CMS",
-      description:
-        "Content management system for creating and publishing blog posts with markdown support.",
-      tech: ["Node.js", "Express", "MongoDB"],
-      imageUrl: "https://via.placeholder.com/300x200?text=Blog+CMS",
     },
   ];
 
@@ -190,7 +150,7 @@ const Projects = () => {
             ))}
           </div>
         </motion.div>
-        <div className="flex flex-col gap-20  mx-auto mt-12">
+        {/* <div className="flex flex-col gap-20  mx-auto mt-12">
           {projects.map((project, index) => {
             return (
               <SingleProject_2
@@ -207,8 +167,41 @@ const Projects = () => {
               />
             );
           })}
-        </div>
-        <h3 className="p-8 text-center ">View more (Github)</h3>
+          
+        </div> */}
+      </div>
+
+      <div className="">
+        {projects.map((project, index) => {
+          return (
+            <SingleProject_v4
+              name={project.name}
+              link={project.link}
+              type={project.type}
+              year={project.year}
+              align={project.align}
+              image={project.image}
+              description={project.description}
+              short_description={project.short_description}
+              long_description={project.long_description}
+              onNext={() => {
+                setActiveIndex(activeIndex + 1);
+              }}
+              onPre={() => {
+                setActiveIndex(activeIndex - 1);
+              }}
+            />
+          );
+        })}
+      </div>
+      <div className="flex justify-center">
+        <a
+          className="p-8 text-center flex-1 "
+          href="https://github.com/K-Tran2001"
+          target="blank"
+        >
+          View more (Github)
+        </a>
       </div>
     </div>
   );

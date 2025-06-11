@@ -160,8 +160,8 @@ const Skills = () => {
     scrollTo(0, 0);
   }, []);
   return (
-    <div className="relative  min-h-[calc(100vh-80px)]  ">
-      <div className="h-[calc(100vh-350px)] flex items-center justify-center">
+    <div className="relative  min-h-[calc(100vh-80px)]  bg-gray-100 ">
+      <div className="h-[calc(100vh-350px)] flex items-center justify-center z-30">
         <div className="py-8 flex flex-col justify-center items-center">
           <div class=" bg-[url('https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg')] bg-cover bg-center text-transparent bg-clip-text ">
             <div className="flex items-center">
@@ -169,7 +169,7 @@ const Skills = () => {
                 MY
               </div>
 
-              <div className=" leading-none text-[5em] md:text-[12em] font-bold">
+              <div className=" leading-none text-[5em] md:text-[12em] font-bold ">
                 {" "}
                 SKILLS
               </div>
@@ -179,7 +179,7 @@ const Skills = () => {
         </div>
       </div>
       <div className=" p-8 px-8 md:px-32   mt-8 ">
-        <h2 className="font-medium text-center">Tools and Platforms</h2>
+        <h2 className="font-bold text-center text-3xl">Tools and Platforms</h2>
         <h2 className="text-center text-sm text-gray-500 mb-10">
           Here are the tools and platforms I regularly use to bring ideas to
           life - form wireframes to polished UI designs
@@ -187,7 +187,7 @@ const Skills = () => {
         <div className="flex gap-2 flex-wrap justify-center ">
           {listTool.map((tool) => (
             <div
-              className="bg-white p-4 px-8 flex gap-4 items-center border border-gray-100 rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech"
+              className="bg-white p-4 px-8 flex gap-4 items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech"
               key={tool.id}
             >
               <div className="item__tech__icon">{tool.icon}</div>
@@ -197,7 +197,7 @@ const Skills = () => {
         </div>
       </div>
       <div className=" p-8 px-8 md:px-32   mt-8">
-        <h2 className="font-medium text-center">Libraries and Tech</h2>
+        <h2 className="font-bold text-center text-3xl">Libraries and Tech</h2>
         <h2 className="text-center text-sm text-gray-500 mb-10">
           Here are the tools and platforms I regularly use to bring ideas to
           life - form wireframes to polished UI designs
@@ -205,7 +205,7 @@ const Skills = () => {
         <div className="flex gap-2 flex-wrap justify-center ">
           {listLibrary_Tech.map((tool) => (
             <div
-              className="bg-white p-4 px-8 flex gap-4 items-center border border-gray-100 rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech"
+              className="bg-white p-4 px-8 flex gap-4 items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech"
               key={tool.id}
             >
               <div className="item__tech__icon">{tool.icon}</div>
@@ -221,7 +221,7 @@ const Skills = () => {
         viewport={{ once: false, amount: 0.1 }}
       >
         <div className=" p-8 px-8 md:px-32   mt-8">
-          <h2 className="font-medium text-center">
+          <h2 className="font-bold text-center text-3xl">
             What I bring to the table?
           </h2>
           <p className="text-center text-sm text-gray-500 mb-10">
@@ -258,7 +258,7 @@ const Skills = () => {
         viewport={{ once: false, amount: 0.1 }}
       >
         <div className=" p-8 px-8 md:px-32  mt-8">
-          <h2 className="font-medium text-center">Hard skills</h2>
+          <h2 className="font-bold text-center text-3xl">Hard skills</h2>
           <p className="text-center text-sm text-gray-500 mb-10">
             Technical abilities
           </p>

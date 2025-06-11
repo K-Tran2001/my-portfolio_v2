@@ -4,6 +4,7 @@ import { fadeIn } from "../components/framerMotion/variants";
 import { motion } from "framer-motion";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import AutoSlider from "../components/AutoSlider/AutoSlider";
+
 const About = () => {
   const [expand, setExpand] = useState(false);
   useEffect(() => {
@@ -29,7 +30,7 @@ const About = () => {
                 />
                 <div>
                   <h2 className="text-[var(--text-color-third)] font-bold">
-                    @ Khoa Tran Van
+                    @ Khoa Tran
                   </h2>
                   <h2 className="italic text-gray-500 font-medium">
                     FullStack Dev
@@ -199,12 +200,12 @@ const About = () => {
               >
                 <div className=" flex gap-8">
                   <h3 className="w-[200px] pl-8 md:block hidden text-[var(--first-color)] text-sm py-4 ">
-                    07/2023 - now
+                    July 2023 - now
                   </h3>
                   <div className="bg-white p-4  flex flex-1 flex gap-2 justify-between rounded-b-2xl shadow-lg text-sm">
                     <div>
-                      <h3 className="font-bold">Chuyên các dự án:</h3>
-                      <div className="grid grid-cols-2">
+                      <h3 className="font-bold mb-4">Chuyên các dự án:</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2">
                         <h3>- Web Booking</h3>
                         <h3>- Landing page</h3>
                         <h3>- E-commerce</h3>
@@ -214,9 +215,12 @@ const About = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-bold">Đảm nhận vai trò:</h3>
+                      <h3 className="font-bold mb-4">Đảm nhận vai trò:</h3>
                       <h3 className="italic text-[var(--text-color-third)]">
                         FullStack Dev - Mobile Dev
+                      </h3>
+                      <h3 className="pl-8 block md:hidden text-gray-400  text-sm  text-right">
+                        July 2023 - now
                       </h3>
                     </div>
                   </div>
@@ -226,7 +230,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <AutoSlider />
+      {/* <AutoSlider /> */}
     </div>
   );
 };

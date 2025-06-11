@@ -15,8 +15,7 @@ export default function Pointer() {
     x: targetPos.current.x,
     y: targetPos.current.y,
   });
-  console.log("targetPos", targetPos);
-  console.log("circlePos", circlePos);
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       targetPos.current = { x: e.clientX, y: e.clientY };

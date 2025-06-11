@@ -12,7 +12,7 @@ const Drawer = ({ children }) => {
   };
 
   return (
-    <div className="relative mt-8" id="drawer">
+    <div className="relative" id="drawer">
       {drawer.isOpen && (
         <div
           className=" z-20 fixed inset-0 h-full w-full bg-gray-400/50 backdrop-blur-[32px] opacity-70"

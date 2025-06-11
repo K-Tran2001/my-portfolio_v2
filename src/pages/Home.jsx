@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import cvFile from "../assets/TranVanKhoa - Frontend Developer.pdf";
+import CrazyImg3DSlider from "../components/CrazyImg3DSlider/CrazyImg3DSlider";
+import Backdrop from "../components/Backdrop";
 
 const Home = () => {
   const handleDownloadCV = () => {
@@ -17,9 +19,11 @@ const Home = () => {
 
   return (
     <div className="relative min-h-[calc(100vh-80px)] z-1000000">
-      <div className="bg-yellow-300 flex flex-col-reverse  items-center justify-center md:flex-row  md:items-start py-8 md:py-12 px-6 md:px-32 h-full gap-8">
+      <div className="absolute w-full h-full bg-gradient-to-tr from-emerald-200 via-sky-500 to-orange-500 opacity-40 z-0"></div>
+
+      <div className=" flex flex-col-reverse  items-center justify-center md:flex-row  md:items-start py-8 md:py-12 px-6 md:px-32 h-full gap-8">
         {/* Left content */}
-        <div className=" flex flex-col justify-center text-center md:text-left  h-full m-auto">
+        <div className="flex flex-col justify-center text-center md:text-left  h-full m-auto z-0">
           <div className="italic font-semibold ">
             I'm Van Khoa - an aspiring
           </div>
@@ -41,7 +45,7 @@ const Home = () => {
           {/* Download button */}
           <div className="mt-6 flex justify-center md:justify-start">
             <button
-              //onClick={handleDownloadCV}
+              onClick={handleDownloadCV}
               className="px-6 py-3 text-white bg-black hover:bg-gray-800 rounded-lg transition"
             >
               Download my CV
@@ -62,16 +66,19 @@ const Home = () => {
       </div>
 
       {/* Quote section */}
-      <div className="w-full px-6 space-y-16 md:px-32 py-12 bg-[url('https://image.freepik.com/free-vector/colorful-abstract-wallpaper-design_23-2148452447.jpg')] bg-cover bg-center">
-        <h2 className="text-center md:text-left text-2xl font-bold text-white">
-          Getting started
-        </h2>
-        <h4 className="mt-4 text-white text-center md:text-left text-base md:text-lg leading-relaxed">
-          "As a Frontend Developer with 2 year experience, I specialize in
-          crafting smooth, high-performance, and user-friendly web interfaces
-          using React and modern technologies."
-        </h4>
+      <div className=" flex ">
+        <div className="z-0 h-full w-full px-6 space-y-16 md:px-32 py-12 bg-[url('https://image.freepik.com/free-vector/colorful-abstract-wallpaper-design_23-2148452447.jpg')] bg-cover bg-center">
+          <h2 className="text-center md:text-left text-2xl font-bold text-white">
+            Getting started
+          </h2>
+          <h4 className="mt-4 text-white text-center md:text-left text-base md:text-lg leading-relaxed">
+            "As a Frontend Developer with 2 year experience, I specialize in
+            crafting smooth, high-performance, and user-friendly web interfaces
+            using React and modern technologies."
+          </h4>
+        </div>
       </div>
+      <CrazyImg3DSlider />
     </div>
   );
 };

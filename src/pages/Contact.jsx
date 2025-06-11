@@ -19,7 +19,7 @@ const Contact = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.1 }}
-          className="flex flex-col justify-center items-center h-full bg-cyan-400 text-white hover:bg-white hover:text-gray-500 transition-colors duration-500 text-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden"
+          className="flex flex-col justify-center items-center h-full bg-gradient-to-br to-orange-400 from-purple-600 text-white  transition-colors duration-500 text-gray-800 p-8 rounded-2xl shadow-lg relative overflow-hidden"
         >
           <div class="">
             <h3 class="text-2xl font-bold mb-6 text-center w-full">
