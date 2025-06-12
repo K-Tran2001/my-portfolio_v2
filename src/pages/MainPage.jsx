@@ -43,7 +43,7 @@ const MainPage = () => {
   const [tab, setTab] = useState("Home");
 
   return (
-    <div className="">
+    <div className="relative">
       {/* <!-- --------------- HEADER --------------- --> */}
 
       <Pointer />
@@ -78,7 +78,7 @@ const MainPage = () => {
           </p>
           <span className=" text-4xl">.</span>
         </div>
-        <div className="flex-1 hidden md:block " id="myNavMenu">
+        <div className="flex-1 hidden md:block" id="myNavMenu">
           <div className="h-full flex justify-center gap-4 items-center ">
             {navData.map((item) => (
               <a
