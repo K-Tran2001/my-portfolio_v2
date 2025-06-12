@@ -126,15 +126,15 @@ const Projects = () => {
     scrollTo(0, 0);
   }, []);
   return (
-    <div className="">
-      <div className="py-8 mt-4 px-4 px-8 md:px-48 ">
+    <div className="bg-gradient-to-br from-purple-500/50 via-indigo-400/20 to-black/70 backdrop-blur-sm">
+      <div className="py-8 pt-4 px-4 px-8 lg:px-48 ">
         <motion.div
           variants={fadeIn("right", 0)}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.1 }}
         >
-          <div className="space-y-4 md:flex    justify-between items-center">
+          <div className="space-y-4 lg:flex    justify-between items-center ">
             {listAchievement.map((item) => (
               <div
                 className="p-16 flex flex-col gap-4 justify-center items-center rounded-lg shadow-lg bg-white hover:bg-gradient-to-b to-orange-300 from-purple-600 hover:text-white transition hover:scale-110  duration-300"
@@ -171,7 +171,7 @@ const Projects = () => {
         </div> */}
       </div>
 
-      <div className="">
+      {/* <div className="">
         {projects.map((project, index) => {
           return (
             <SingleProject_v4
@@ -193,6 +193,70 @@ const Projects = () => {
             />
           );
         })}
+      </div> */}
+
+      <div className="w-full   px-8 lg:px-48 ">
+        <div className="pt-8 pr-8 lg:pl-16 lg:pt-16 lg:pr-0 relative ">
+          <div className="bg-gradient-to-br from-orange-400 to-red-500 w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-[20px] hover:scale-[1.1] transition-transform duration-300 ease-in-out absolute top-0 lg:left-0 right-0 shadow-lg "></div>
+
+          <img
+            src={projects[activeIndex].image}
+            alt="Card Image"
+            className="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-[20px] hover:scale-[1.1] transition-transform duration-300 ease-in-out absolute top-0 lg:left-0 right-0 shadow-lg "
+          />
+
+          <div className="pt-4 lg:pt-0 bg-white min-h-96 rounded-3xl  lg:flex gap-8 items-end justify-end lg:justify-center shadow-lg ">
+            <div className=" lg:w-64 py-8 px-4  block lg:flex items-center justify-end gap-4 space-y-4 lg:space-y-0 ">
+              <div className={`${activeIndex === 0 ? "opacity-40" : ""}`}>
+                <button
+                  className="px-8 py-4 w-[100px] bg-black text-white rounded-2xl"
+                  onClick={() => setActiveIndex(activeIndex - 1)}
+                  disabled={activeIndex === 0}
+                >
+                  Pre
+                </button>
+              </div>
+              <div
+                className={`${
+                  activeIndex === projects?.length - 1 ? "opacity-40" : ""
+                }`}
+              >
+                <button
+                  className="px-8 py-4 w-[100px] bg-black text-white rounded-2xl"
+                  onClick={() => setActiveIndex(activeIndex + 1)}
+                  disabled={activeIndex === projects?.length - 1}
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+            <div className="p-8  flex-1 space-y-4 ">
+              <span className="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-medium mb-2">
+                {projects[activeIndex].type}
+              </span>
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">
+                {projects[activeIndex].name}
+              </h2>
+              <div className="min-h-32">
+                <p className="text-gray-600 leading-relaxed mb-6  pr-4 lg:pr-16 align-justify">
+                  {projects[activeIndex].description}
+                </p>
+              </div>
+              <div className="flex gap-4 justify-start m-auto">
+                <a className="px-4 py-4 w-[110px] text-white   inline-block bg-gradient-to-br from-orange-400 to-red-500 text-white py-3 text-center rounded-l-2xl shadow-md font-medium  transition">
+                  Detail
+                </a>
+                <a
+                  href={projects[activeIndex].link}
+                  target="blank"
+                  className="px-4 py-4 w-[110px] text-white   inline-block bg-gradient-to-br from-orange-400 to-red-500 text-white py-3 text-center rounded-r-2xl shadow-md font-medium  transition"
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="flex justify-center">
         <a

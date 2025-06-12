@@ -160,7 +160,7 @@ const Skills = () => {
     scrollTo(0, 0);
   }, []);
   return (
-    <div className="relative  min-h-[calc(100vh-80px)]  bg-gray-100 ">
+    <div className="relative  min-h-[calc(100vh-80px)]  bg-gradient-to-tl from-black/60  to-transparent">
       <div className="h-[calc(100vh-350px)] flex items-center justify-center z-30">
         <div className="py-8 flex flex-col justify-center items-center">
           <div class=" bg-[url('https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg')] bg-cover bg-center text-transparent bg-clip-text ">
