@@ -9,12 +9,20 @@ export const MainProvider = ({ children }) => {
     position: "rightDrawer",
     onConfirm: () => {},
   });
+  const [languagePage, setLangLanguagePage] = React.useState(() => {
+    var lang = localStorage.getItem("@lang");
+    if (lang) {
+      return lang;
+    } else return "en";
+  });
 
   return (
     <MainContext.Provider
       value={{
         drawer,
         setDrawer,
+        languagePage,
+        setLangLanguagePage,
       }}
     >
       {children}

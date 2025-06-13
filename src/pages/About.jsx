@@ -4,8 +4,10 @@ import { fadeIn } from "../components/framerMotion/variants";
 import { motion } from "framer-motion";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import AutoSlider from "../components/AutoSlider/AutoSlider";
+import { useTranslate } from "../hooks/useTranslate";
 
 const About = () => {
+  const { t, changeLanguage, lang } = useTranslate();
   const [expand, setExpand] = useState(false);
   useEffect(() => {
     scrollTo(0, 0);
@@ -14,7 +16,7 @@ const About = () => {
     <div className="relative  min-h-[calc(100vh-80px)]  dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
       <div className="flex justify-center items-center w-full min-h-48  px-8 py-8 md:px-32 md:py-8 bg-[url('https://t4.ftcdn.net/jpg/02/00/68/69/360_F_200686969_GJ7zbz2qaNIE4dyHSbZkQXvNPzRuwlr3.jpg')] bg-cover bg-center">
         <h4 className="text-center  text-white text-[3em] dark:text-glow-blue ">
-          EVERY PIXEL IS A STEP CLOSER TO THE DREAM
+          {t("every_pixel_is")}
         </h4>
       </div>
       <div className="px-8 py-4 md:px-32 md:py-8 mt-8 ">
@@ -39,14 +41,8 @@ const About = () => {
               </div>
             </div>
             <div className="mt-12 mx-8 p-4 animate-rote bg-white dark:bg-transparent dark:text-white/[0.9]">
-              <div className="font-bold">-ABOUT ME-</div>
-              <h3 className="md:pr-16 pt-4 ">
-                I am a passionate and enthusiastic individual in the field of
-                information technology. With diverse experience and knowledge in
-                programming, data analysis, and system design, I am constantly
-                seeking opportunities to create innovative solutions and deliver
-                tangible value to my work and projects.
-              </h3>
+              <div className="font-bold">-{t("about_me")}-</div>
+              <h3 className="md:pr-16 pt-4 ">{t("my_introduction_detail")}</h3>
             </div>
           </div>
           <div className="p-8 shadow-lg relative bg-white dark:hover:border-dark-mode">
@@ -90,7 +86,9 @@ const About = () => {
           </div>
         </div>
         <div className="mt-16 md:px-8">
-          <h3 className="font-bold dark:text-white/[0.9]">-EDUCATION-</h3>
+          <h3 className="font-bold dark:text-white/[0.9]">
+            -{t("education")}-
+          </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 mt-4 ">
             <motion.div
               variants={fadeIn("right", 0)}
@@ -99,20 +97,11 @@ const About = () => {
               viewport={{ once: false, amount: 0.1 }}
             >
               <div className="bg-gradient-to-br from-red-500 to-blue-500 text-white p-8 rounded-2xl shadow-lg dark:hover:border-dark-mode min-h-[300px]">
-                <div className="font-bold pb-8">
-                  An Giang University - Vietnam National University, Ho Chi Minh
-                  City
-                </div>
+                <div className="font-bold pb-8">{t("agu")}</div>
                 <div className="text-end">2019-2023</div>
                 <div>
-                  <div>
-                    - Well-trained in building and managing modern websites,
-                    organizing and storing data.
-                  </div>
-                  <div>
-                    - Mastering data structures and algorithms to apply them in
-                    solving real-world problems.
-                  </div>
+                  <div>- {t("agu_study_1")}</div>
+                  <div>- {t("agu_study_2")}</div>
                 </div>
               </div>
             </motion.div>
@@ -123,17 +112,11 @@ const About = () => {
               viewport={{ once: false, amount: 0.1 }}
               className=""
             >
-              <div className="bg-white p-8 rounded-2xl dark:hover:border-dark-mode min-h-[300px]">
+              <div className="bg-white p-8 rounded-2xl dark:hover:border-dark-mode min-h-[300px] ">
                 <div>
-                  <h3 className="font-bold mb-4">Progress</h3>
-                  <div>
-                    - Ranked among the top of the class with excellent academic
-                    performance (GPA: 3.68), achieving perfect scores in
-                    programming and OOP courses.
-                  </div>
-                  - Consistently received merit-based scholarships from the
-                  university and the Doan Toi Scholarship for several
-                  consecutive years.
+                  <h3 className="font-bold mb-4">{t("progress")}</h3>
+                  <div>- {t("edu_progress_1")}</div>
+                  <div>- {t("edu_progress_2")}</div>
                 </div>
               </div>
             </motion.div>
@@ -146,14 +129,9 @@ const About = () => {
             >
               <div className="bg-white p-8 rounded-2xl dark:hover:border-dark-mode min-h-[300px]">
                 <div>
-                  <h3 className="font-bold mb-4">Progress</h3>
-                  <div>
-                    The website helps promote products and attract more
-                    customers, increasing awareness of the company's products
-                    and services. It offers all the features and functionalities
-                    of a complete e-commerce site.
-                  </div>
-                  Technologies Used:
+                  <h3 className="font-bold mb-4">{t("progress")}</h3>
+                  <div>{t("intern_work_1")}</div>
+                  <div>{t("tech_usage")}</div>
                 </div>
               </div>
             </motion.div>
@@ -165,22 +143,17 @@ const About = () => {
               className="order-1 lg:order-2"
             >
               <div className="bg-gradient-to-tl from-red-500 to-blue-500 text-white  p-8 rounded-2xl shadow-lg dark:hover:border-dark-mode min-h-[300px]">
-                <div className="font-bold pb-8">TPONE COMPANY LIMITED</div>
+                <div className="font-bold pb-8">{t("tp_one")}</div>
                 <div className="text-end">02/2023 - 04/2023</div>
                 <div>
-                  <div>
-                    Topic: Building a Pharmaceutical Sales Website for Clinics
-                    The website was completed ahead of schedule and met all the
-                    functionalities required for a fully functional e-commerce
-                    platform.
-                  </div>
+                  <div>{t("tp_one_work_1")}</div>
                 </div>
               </div>
             </motion.div>
           </div>
         </div>
         <div className="mt-16 md:px-8">
-          <h3 className="font-bold dark:text-white/[0.9]">-WORK-</h3>
+          <h3 className="font-bold dark:text-white/[0.9]">-{t("work")}-</h3>
           <div className="mt-8">
             <div className="p-4 px-8 bg-gradient-to-r to-orange-400 from-purple-500  text-white flex justify-between items-center rounded-l-2xl rounded-tr-2xl dark:hover:border-dark-mode">
               <h3 className="font-bold text-2xl">Phoenix Company</h3>
@@ -202,18 +175,20 @@ const About = () => {
                   </h3>
                   <div className="bg-white p-4  flex flex-1 flex gap-2 justify-between rounded-b-2xl shadow-lg text-sm dark:hover:border-dark-mode">
                     <div>
-                      <h3 className="font-bold mb-4">Chuyên các dự án:</h3>
+                      <h3 className="font-bold mb-4">
+                        {t("specializing_in")}:
+                      </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2">
-                        <h3>- Web Booking</h3>
+                        <h3>- Web booking</h3>
                         <h3>- Landing page</h3>
                         <h3>- E-commerce</h3>
-                        <h3>- Web quản lý - giám sát</h3>
-                        <h3>- App đặt xe</h3>
-                        <h3>- Thiết kế UX/UI</h3>
+                        <h3>- {t("web_management_monitoring")}</h3>
+                        <h3>- {t("car_booking_app")}</h3>
+                        <h3>- {t("ui_ux_design")}</h3>
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-bold mb-4">Đảm nhận vai trò:</h3>
+                      <h3 className="font-bold mb-4">{t("role")}:</h3>
                       <h3 className="italic text-[var(--text-color-third)]">
                         FullStack Dev - Mobile Dev
                       </h3>

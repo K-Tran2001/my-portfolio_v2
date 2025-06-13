@@ -25,21 +25,10 @@ import { ThemeToggleButton } from "../components/common/ThemeToggleButton";
 
 const MainPage = () => {
   const { t, changeLanguage, lang } = useTranslate();
+
   const context = React.useContext(MainContext);
   const { drawer, setDrawer } = context;
-  function myMenuFunction() {
-    var menuBtn = document.getElementById("myNavMenu");
 
-    if (menuBtn.className === "nav-menu") {
-      menuBtn.className += " responsive";
-    } else {
-      menuBtn.className = "nav-menu";
-    }
-  }
-  function myMenuFunction2() {
-    var menuBtn = document.getElementById("myNavMenu");
-    menuBtn.className = "nav-menu";
-  }
   const navData = ["Home", "About", "Skills", "Projects", "Blog", "Contact"];
   const [tab, setTab] = useState("Home");
 
@@ -47,7 +36,7 @@ const MainPage = () => {
     <div className="relative">
       {/* <!-- --------------- HEADER --------------- --> */}
 
-      <Pointer />
+      {/* <Pointer /> */}
       <Particle />
       <Drawer>
         <div className=" h-[100vh-80px]   flex flex-col  items-center gap-4 py-8 dark:text-white/[0.9]">
@@ -106,7 +95,7 @@ const MainPage = () => {
           <Select callback={(e) => changeLanguage(e)} />
         </div>
         <div
-          className="block lg:hidden flex items-center"
+          className="block lg:hidden flex items-center dark:text-white/[0.9]"
           onClick={() =>
             setDrawer({
               ...drawer,
@@ -188,12 +177,12 @@ const MainPage = () => {
             <FaGithub size={24} />
           </a>
         </div>
-        <div className="bottom-footer">
+        {/* <div className="bottom-footer">
           <p className="text-sm md:text-lg">
             {"Copy right"} &copy; <a href="#home">Khoa Tran</a> -{" "}
             {"All rights reserved"}
           </p>
-        </div>
+        </div> */}
       </footer>
     </div>
   );

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { MainContext } from "../context/MainContext";
 
 const languages = [
   {
@@ -14,12 +15,15 @@ const languages = [
 ];
 
 const Select = ({ lang, callback }) => {
-  const [selectedLang, setSelectedLang] = useState(lang || "vi");
+  const context = useContext(MainContext);
+  const { languagePage } = context;
+  const [selectedLang, setSelectedLang] = useState(languagePage);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelect = (code) => {
     setSelectedLang(code);
     callback(code);
+    localStorage.setItem("@lang", code);
     setIsOpen(false);
   };
 
@@ -40,11 +44,13 @@ const Select = ({ lang, callback }) => {
         <span className="dropdown-icon">▼</span>
       </button>
       {isOpen && (
-        <ul className="select-dropdown dark:bg-gray-700 bg-gray-300 rounded-sm -mt-6 pt-2 -z-10">
+        <ul className="select-dropdown dark:bg-gray-700 bg-gray-300 rounded-sm -mt-6 pt-2 ">
           {languages.map((lang) => (
             <li
               key={lang.code}
-              onClick={() => handleSelect(lang.code)}
+              onClick={() => {
+                handleSelect(lang.code);
+              }}
               className="flex gap-2 p-2 dark:border-gray-800 dark:text-gray-400"
             >
               <img

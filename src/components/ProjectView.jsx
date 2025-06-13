@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa6";
+import { MainContext } from "../context/MainContext";
 const ProjectView = () => {
+  const context = React.useContext(MainContext);
+  const { languagePage } = context;
   const [activeIndex, setActiveIndex] = useState(0);
-  const projects = [
+  const projectsVi = [
     {
       name: "Mina House",
       type: "Web Admin + Web App",
@@ -90,13 +93,104 @@ const ProjectView = () => {
         "AloGo là ứng dụng gọi xe giúp kết nối khách hàng với tài xế một cách tiện lợi. Người dùng có thể tìm tài xế gần nhất, theo dõi lộ trình, và nhắn tin trực tiếp. App dành cho tài xế (AloGo Driver) hỗ trợ tiếp nhận chuyến đi nhanh chóng và tối ưu quá trình di chuyển.",
     },
   ];
+  const projectsEn = [
+    {
+      name: "Mina House",
+      type: "Web Admin + Web App",
+      year: "Mar2022",
+      align: "right",
+      image:
+        "https://admin.minahouse.vn/uploads/PES/Image/002_Bi mat-638583990087830971.jpg",
+      link: "https://minahouse.vn/",
+      description:
+        "Online room booking web app for fast, contactless reservations",
+      short_description: "Quick and contactless room booking application.",
+      long_description:
+        "Mina House is a web platform that allows users to book rooms online quickly and conveniently without any physical contact. A modern solution suited for travel and accommodation in the digital era.",
+    },
+    {
+      name: "Winlab",
+      type: "Web Admin + App",
+      year: "Jan2023",
+      align: "right",
+      image:
+        "https://winlab.vn/wp-content/uploads/2023/08/perfume-shower-gel-800x800.jpg",
+      link: "https://winlab.vn/",
+      description:
+        "Website for premium cosmetics OEM services and product promotion\nMobile app for attendance and warehouse data management",
+      short_description:
+        "Digitized solution for cosmetic OEM processes and internal management.",
+      long_description:
+        "Winlab provides a website to showcase high-end cosmetic OEM services and promote products to clients. Simultaneously, the mobile app is used by internal staff for attendance tracking, warehouse data monitoring, and performance management.",
+    },
+    {
+      name: "BVDL CME",
+      type: "Web Admin + Web Client + App",
+      year: "Sept2022",
+      align: "left",
+      image:
+        "https://admin.daotao.bvdl.org.vn/uploads/seminar/S-280525-0190/images/imageBanner_638841077687643547.png",
+      link: "https://daotao.bvdl.org.vn/",
+      description:
+        "Certification medical conference management website\nClient site displays events, forums, news, and allows user registration\nMobile app for guest info scanning, certificate printing, and check-in",
+      short_description: "CME certification conference management system.",
+      long_description:
+        "BVDL CME is a comprehensive platform for organizing and managing medical certification conferences. It includes an admin portal for configuration, a public-facing website for events and user registration, and a mobile app for check-in, certificate printing, and guest lookup.",
+    },
+    {
+      name: "SongHuong Adv",
+      type: "Web Admin + App",
+      year: "Jan2023",
+      align: "right",
+      image:
+        "https://res.cloudinary.com/dd0qffuvy/image/upload/v1749346182/logo_okbfgs.png",
+      link: "http://songhuong.phoenixcompany.vn",
+      description:
+        "Website for attendance data management of PGs and related campaign creation\nMobile app for PGs to clock in and submit job data",
+      short_description: "PG attendance and activity management solution.",
+      long_description:
+        "SongHuong Adv helps businesses organize and manage their PG teams efficiently. The website allows creation and management of marketing campaigns, while the mobile app enables PG staff to clock in and report work directly from their phones.",
+    },
+    {
+      name: "Pos123",
+      type: "Web Admin + App",
+      year: "May2024",
+      align: "right",
+      image:
+        "https://res.cloudinary.com/dd0qffuvy/image/upload/v1749346048/pos123_hg8aon.jpg",
+      link: "https://pos123.vn/",
+      description:
+        "Sales management website for businesses with multiple branches\nMobile app for staff to submit sales data",
+      short_description: "Multi-branch sales management platform.",
+      long_description:
+        "Pos123 is a modern sales management system suitable for businesses with multiple stores or branches. The website helps monitor centralized sales operations, while the mobile app allows staff to submit sales data quickly and conveniently.",
+    },
+    {
+      name: "AloGo",
+      type: "App",
+      year: "May2024",
+      align: "left",
+      image:
+        "https://res.cloudinary.com/dd0qffuvy/image/upload/v1749346326/full_logo_s94y9m.png",
+      link: "http://alogo-dev.phoenixcompany.vn/",
+      description:
+        "AloGo - A fast and convenient ride-hailing app with features like nearby driver search, messaging, and trip tracking\nAloGo Driver App for drivers to accept rides easily",
+      short_description: "Ride-hailing app with efficient trip management.",
+      long_description:
+        "AloGo is a ride-hailing app that connects passengers and drivers conveniently. Users can find nearby drivers, track their trip, and communicate directly. The driver app (AloGo Driver) supports quick ride acceptance and optimizes the transportation process.",
+    },
+  ];
+
   return (
     <div>
       <div className="w-full   px-8 lg:px-48 ">
         <div className="pt-8 pr-8 lg:pl-16 lg:pt-16 lg:pr-0 relative ">
           <div className="bg-gradient-to-br from-orange-400 to-red-500 w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-[20px] hover:scale-[1.1] transition-transform duration-300 ease-in-out absolute top-0 lg:left-0 right-0 shadow-lg overflow-hidden">
             <img
-              src={projects[activeIndex].image}
+              src={
+                (languagePage === "en" ? projectsEn : projectsVi)[activeIndex]
+                  .image
+              }
               alt=""
               srcSet=""
               className="w-full h-full absolute object-cover rounded-[20px] hover:scale-[1.1] transition-transform duration-300"
@@ -104,7 +198,7 @@ const ProjectView = () => {
           </div>
 
           {/* <img
-            src={projects[activeIndex].image}
+            src={(languagePage ==="en"?projectsEn : projectsVi)[activeIndex].image}
             alt="Card Image"
             className="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-[20px] hover:scale-[1.1] transition-transform duration-300 ease-in-out absolute top-0 lg:left-0 right-0 shadow-lg "
           /> */}
@@ -124,7 +218,7 @@ const ProjectView = () => {
               </div>
               <div
                 className={`${
-                  activeIndex === projects?.length - 1 ? "opacity-40" : ""
+                  activeIndex === projectsVi?.length - 1 ? "opacity-40" : ""
                 }`}
               >
                 <button
@@ -132,7 +226,7 @@ const ProjectView = () => {
                   onClick={() => {
                     setActiveIndex(activeIndex + 1);
                   }}
-                  disabled={activeIndex === projects?.length - 1}
+                  disabled={activeIndex === projectsVi?.length - 1}
                 >
                   <FaChevronRight />
                 </button>
@@ -140,26 +234,40 @@ const ProjectView = () => {
             </div>
             <div className="p-8  flex-1 space-y-4 ">
               <span className="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-medium mb-2">
-                {projects[activeIndex].type}
+                {
+                  (languagePage === "en" ? projectsEn : projectsVi)[activeIndex]
+                    .type
+                }
               </span>
               <h2 className="text-2xl font-bold text-blue-600 mb-4">
-                {projects[activeIndex].name}
+                {
+                  (languagePage === "en" ? projectsEn : projectsVi)[activeIndex]
+                    .name
+                }
               </h2>
               <div className="min-h-32">
                 <p className="text-gray-600 leading-relaxed mb-6  pr-4 lg:pr-16 align-justify">
-                  {projects[activeIndex].description}
+                  {
+                    (languagePage === "en" ? projectsEn : projectsVi)[
+                      activeIndex
+                    ].description
+                  }
                 </p>
               </div>
               <div className="flex gap-4 justify-start m-auto">
                 <a className="px-4 py-4 w-[110px] text-white   inline-block bg-gradient-to-br from-orange-400 to-red-500 text-white py-3 text-center rounded-l-2xl shadow-md font-medium  transition">
-                  Detail
+                  {languagePage === "en" ? "Detail" : "Chi tiết"}
                 </a>
                 <a
-                  href={projects[activeIndex].link}
+                  href={
+                    (languagePage === "en" ? projectsEn : projectsVi)[
+                      activeIndex
+                    ].link
+                  }
                   target="blank"
                   className="px-4 py-4 w-[110px] text-white   inline-block bg-gradient-to-br from-orange-400 to-red-500 text-white py-3 text-center rounded-r-2xl shadow-md font-medium  transition"
                 >
-                  Preview
+                  {languagePage === "en" ? "Preview" : "Xem thử"}
                 </a>
               </div>
             </div>
@@ -172,7 +280,7 @@ const ProjectView = () => {
           href="https://github.com/K-Tran2001"
           target="blank"
         >
-          View more (Github)
+          {languagePage === "en" ? "View more" : "Xem thêm ở"} (Github)
         </a>
       </div>
     </div>

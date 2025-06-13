@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import FlyingShip from "../components/FlyingShip";
 import FlyingShip_2 from "../components/FlyingShip_2";
 import { useEffect } from "react";
+import { useTranslate } from "../hooks/useTranslate";
 
 export default function Blog() {
+  const { t, changeLanguage, lang } = useTranslate();
   useEffect(() => {
     scrollTo(0, 0);
   }, []);
@@ -30,10 +32,10 @@ export default function Blog() {
           }}
         >
           <h1 className="text-4xl font-sans font-bold text-blue-700 dark:text-orange-400 leading-tight mb-6">
-            💻 Code is Passion
+            💻 {t("code_is_passion")}
           </h1>
           <blockquote className="italic text-gray-600 text-lg border-l-4 border-blue-300 pl-4 dark:text-white/[0.9]">
-            “We don't just code to live, we live to code.”
+            “{t("we_dont_just_code")}”
           </blockquote>
 
           <div className="hidden md:block absolute left-[30px] top-[140px]  animate-up-down  w-64 h-64">
@@ -53,53 +55,41 @@ export default function Blog() {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <Section title="✨ My First Line of Code">
+          <Section title={`✨ ${t("my_first_line")}`}>
             <p>
-              I still remember the first time I typed{" "}
-              <Code>console.log("Hello World")</Code>. That tiny line made me
-              thrilled – like I was speaking to a computer for the very first
-              time.
+              {t("i_still_rêmmber")} <Code>console.log("Hello World")</Code>.{" "}
+              {t("that_tiny_line")}
             </p>
-            <FloatingNote>
-              “Code is the language of digital creativity.”
-            </FloatingNote>
+            <FloatingNote>“{t("code_is_the_language")}”</FloatingNote>
           </Section>
 
-          <Section title="🧠 Code is also an Art">
+          <Section title={`🧠 ${t("code_is")}`}>
             <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-white/[0.9]">
               <li>
-                <strong>Smooth UI</strong> is aesthetic.
+                <strong>{t("smooth_ui")}</strong> {t("is_aesthetic")}
               </li>
               <li>
-                <strong>Optimized performance</strong> is finesse.
+                <strong>{t("optimized_performance")}</strong> {t("is_finesse")}
               </li>
               <li>
-                <strong>Clear architecture</strong> is deep thinking.
+                <strong>{t("clear_architecture")}</strong> {t("thinking")}
               </li>
             </ul>
           </Section>
 
-          <Section title="⚙️ Sleepless Nights... Yet Joyful">
-            <p>
-              I used to fix bugs until 2–3 a.m. No one forced me – I just wanted
-              it to run. That’s when I realized: I’m doing what I love.
-            </p>
+          <Section title={`⚙️ ${t("sleepless")}`}>
+            <p>{t("i_used_to")}</p>
           </Section>
 
-          <Section title="🔥 Keep the Passion Burning">
-            <p>
-              There were times I felt tired and wanted to give up. But every
-              time I finished building a feature and heard a user say “this is
-              so smooth,” it felt worth it.
-            </p>
+          <Section title={`🔥 ${t("keep_the_passion")}`}>
+            <p>{t("there_were_times")}</p>
           </Section>
 
-          <Section title="💬 Final Thoughts">
+          <Section title={`💬 ${t("final_thoughts")}`}>
             <p>
-              <strong>Code is the tool. Passion is the fuel.</strong>
+              <strong>{t("code_is_the_tool")}</strong>
               <br />
-              If you’re passionate, keep the fire alive. The coding journey has
-              its ups and downs, but it’s filled with creative joy.
+              {t("if_youre")}
             </p>
           </Section>
         </motion.div>

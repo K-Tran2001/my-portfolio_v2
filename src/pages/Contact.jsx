@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { fadeIn } from "../components/framerMotion/variants";
 import { motion } from "framer-motion";
+import { useTranslate } from "../hooks/useTranslate";
 const Contact = () => {
+  const { t, changeLanguage, lang } = useTranslate();
   useEffect(() => {
     scrollTo(0, 0);
   }, []);
@@ -9,13 +11,11 @@ const Contact = () => {
   return (
     <section className=" py-16 px-6 sm:px-12 lg:px-24 dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-white/[0.9]">
-          Get in touch
+        <h2 className="mb-4 text-3xl font-bold text-gray-800 dark:text-white/[0.9]">
+          {t("get_in_touch")}
         </h2>
-        <p className="dark:text-white/[0.6]">
-          Feel free to reach out if you’d like to collaborate
-          <br />
-          you are just a few clicks away!
+        <p className="dark:text-white/[0.6] max-w-96 text-center m-auto">
+          {t("feel_free")}
         </p>
       </div>
 
@@ -29,7 +29,7 @@ const Contact = () => {
         >
           <div className="">
             <h3 className="text-2xl font-bold mb-6 text-center w-full">
-              Find Me ↲
+              {t("find_me")} ↲
             </h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
@@ -45,7 +45,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <span className="text-center  w-full">
-                  Tel:{" "}
+                  {t("tel")}:{" "}
                   <a href="tel:0367855407" className="hover:underline">
                     0367855407
                   </a>
@@ -65,7 +65,7 @@ const Contact = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="text"
-                placeholder="Name"
+                placeholder={t("name")}
                 className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
               />
               <input
@@ -77,7 +77,7 @@ const Contact = () => {
 
             <textarea
               rows="6"
-              placeholder="Message"
+              placeholder={t("message")}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cyan-400 focus:outline-none resize-none"
             ></textarea>
 
@@ -85,7 +85,7 @@ const Contact = () => {
               type="submit"
               className="bg-cyan-500 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-cyan-600 transition-all dark:border-dark-mode"
             >
-              Send
+              {t("send")}
               <svg
                 className="w-5 h-5"
                 fill="none"

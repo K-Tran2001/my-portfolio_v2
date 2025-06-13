@@ -12,9 +12,14 @@ import SliderProject_Card from "../components/SliderProject_Card/SliderProject_C
 import SingleProject_v4 from "../components/SingleProject_v4";
 
 import ProjectView from "../components/ProjectView";
+import { useTranslate } from "../hooks/useTranslate";
+import { MainContext } from "../context/MainContext";
 
 const Projects = () => {
-  const listAchievement = [
+  const { t } = useTranslate();
+  const context = React.useContext(MainContext);
+  const { languagePage } = context;
+  const listAchievementEn = [
     {
       title: "Completed",
       number: 10,
@@ -34,6 +39,26 @@ const Projects = () => {
       icon: <SiOpenbadges size={32} />,
     },
   ];
+  const listAchievementVi = [
+    {
+      title: "Hoàn thành",
+      number: 10,
+      description: "Dự án đã thực hiện",
+      icon: <FaBagShopping size={32} />,
+    },
+    {
+      title: "Khách hàng",
+      number: 25,
+      description: "Khách hàng hài lòng",
+      icon: <FiUsers size={32} />,
+    },
+    {
+      title: "Kinh nghiệm",
+      number: 2,
+      description: "Năm hoạt động trong ngành",
+      icon: <SiOpenbadges size={32} />,
+    },
+  ];
 
   useEffect(() => {
     scrollTo(0, 0);
@@ -48,7 +73,10 @@ const Projects = () => {
           viewport={{ once: false, amount: 0.1 }}
         >
           <div className="space-y-4 lg:space-y-0 lg:flex    justify-between items-center ">
-            {listAchievement.map((item) => (
+            {(languagePage === "en"
+              ? listAchievementEn
+              : listAchievementVi
+            ).map((item) => (
               <div
                 className=" p-16 flex flex-col gap-4 justify-center items-center rounded-lg shadow-lg bg-white hover:bg-gradient-to-b to-orange-300 from-purple-600 hover:text-white  transition hover:scale-110 hover:rotate-[10deg] duration-300 dark:border-dark-mode"
                 key={Math.random()}

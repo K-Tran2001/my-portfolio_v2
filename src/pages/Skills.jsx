@@ -20,8 +20,13 @@ import communicationImg from "../assets/images/communication.jpg";
 import time_managementImg from "../assets/images/time_management.jpg";
 import { motion } from "framer-motion";
 import { fadeIn } from "../components/framerMotion/variants";
+import { useTranslate } from "../hooks/useTranslate";
+import { MainContext } from "../context/MainContext";
 
 const Skills = () => {
+  const { t } = useTranslate();
+  const context = React.useContext(MainContext);
+  const { languagePage } = context;
   const listTool = [
     {
       id: 1,
@@ -107,7 +112,7 @@ const Skills = () => {
       icon: <SiAntdesign color="#0170FE" />,
     },
   ];
-  const softSkills = [
+  const softSkillsEn = [
     {
       title: "Creativity",
       description: "Bringing fresh, user-first ideas",
@@ -129,7 +134,7 @@ const Skills = () => {
       image: time_managementImg,
     },
   ];
-  const hardSkills = [
+  const hardSkillsEn = [
     {
       title: "UI/UX DESIGN",
       description: "Wireframing, prototyping, usability testing.",
@@ -155,6 +160,55 @@ const Skills = () => {
       description: "Familiar with HTML, CSS and JAVASCRIPT.",
     },
   ];
+  const softSkillsVi = [
+    {
+      title: "Sáng tạo",
+      description: "Mang đến những ý tưởng mới, ưu tiên người dùng",
+      image: creativityImg,
+    },
+    {
+      title: "Hợp tác",
+      description: "Làm việc nhóm, phản hồi và cải tiến liên tục",
+      image: collaborationImg,
+    },
+    {
+      title: "Giao tiếp",
+      description: "Diễn đạt rõ ràng qua văn bản và khi giải thích thiết kế",
+      image: communicationImg,
+    },
+    {
+      title: "Quản lý thời gian",
+      description: "Đáp ứng thời hạn và tổ chức các sprint hiệu quả",
+      image: time_managementImg,
+    },
+  ];
+
+  const hardSkillsVi = [
+    {
+      title: "THIẾT KẾ UI/UX",
+      description: "Lên khung, tạo mẫu thử, kiểm thử tính khả dụng.",
+    },
+    {
+      title: "CÔNG CỤ THIẾT KẾ",
+      description: "Figma, Photoshop.",
+    },
+    {
+      title: "TẠO MẪU TƯƠNG TÁC",
+      description: "Framer, Excalidraw, luồng tương tác.",
+    },
+    {
+      title: "THIẾT KẾ ĐA NỀN TẢNG",
+      description: "Thiết kế cho máy tính, di động, máy tính bảng.",
+    },
+    {
+      title: "THIẾT KẾ THỊ GIÁC",
+      description: "Lý thuyết màu sắc, kiểu chữ, bố cục.",
+    },
+    {
+      title: "KIẾN THỨC WEB CƠ BẢN",
+      description: "Hiểu biết về HTML, CSS và JAVASCRIPT.",
+    },
+  ];
 
   useEffect(() => {
     scrollTo(0, 0);
@@ -175,18 +229,15 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <h3 className="dark:text-white/[0.9]">
-            "Behind every pixel, there's a purpose."
-          </h3>
+          <h3 className="dark:text-white/[0.9]">"{t("behind_every_pixel")}"</h3>
         </div>
       </div>
       <div className=" p-8 px-8 md:px-32   mt-8 ">
-        <h2 className="font-bold text-center text-3xl dark:text-white/[0.9]">
-          Tools and Platforms
+        <h2 className="font-bold text-center text-3xl dark:text-white/[0.9] mb-4">
+          {t("tools_and_platforms")}
         </h2>
         <h2 className="text-center text-sm text-gray-500 mb-10">
-          Here are the tools and platforms I regularly use to bring ideas to
-          life - form wireframes to polished UI designs
+          {t("here_are_the_tools")}
         </h2>
         <div className="flex gap-2 flex-wrap justify-center ">
           {listTool.map((tool) => (
@@ -201,12 +252,11 @@ const Skills = () => {
         </div>
       </div>
       <div className=" p-8 px-8 md:px-32   mt-8">
-        <h2 className="font-bold text-center text-3xl dark:text-white/[0.9]">
-          Libraries and Tech
+        <h2 className="font-bold text-center text-3xl dark:text-white/[0.9] mb-4">
+          {t("libraries_and_techologies")}
         </h2>
         <h2 className="text-center text-sm text-gray-500 mb-10">
-          Here are the tools and platforms I regularly use to bring ideas to
-          life - form wireframes to polished UI designs
+          {t("empowered_by_a_modern")}
         </h2>
         <div className="flex gap-2 flex-wrap justify-center ">
           {listLibrary_Tech.map((tool) => (
@@ -227,32 +277,36 @@ const Skills = () => {
         viewport={{ once: false, amount: 0.1 }}
       >
         <div className=" p-8 px-8 md:px-32   mt-8">
-          <h2 className="font-bold text-center text-3xl dark:text-white/[0.9]">
-            What I bring to the table?
+          <h2 className="font-bold text-center text-3xl dark:text-white/[0.9] mb-4">
+            {t("what_i_bring")}
           </h2>
           <p className="text-center text-sm text-gray-500 mb-10">
-            My personal traits
+            {t("my_personal_traits")}
           </p>
           <div className="max-w-6xl mx-auto px-4 py-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {softSkills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="bg-white shadow-md hover:shadow-xl rounded-2xl overflow-hidden transition duration-300 dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
-                >
-                  <img
-                    src={skill.image}
-                    alt={skill.title}
-                    className="h-40 w-full object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2 pb-4">
-                      {skill.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm">{skill.description}</p>
+              {(languagePage === "en" ? softSkillsEn : softSkillsVi).map(
+                (skill, index) => (
+                  <div
+                    key={index}
+                    className="bg-white shadow-md hover:shadow-xl rounded-2xl overflow-hidden transition duration-300 dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
+                  >
+                    <img
+                      src={skill.image}
+                      alt={skill.title}
+                      className="h-40 w-full object-cover"
+                    />
+                    <div className="p-4">
+                      <h3 className="text-xl font-semibold text-gray-800 mb-2 pb-4">
+                        {skill.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm">
+                        {skill.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
         </div>
@@ -264,25 +318,27 @@ const Skills = () => {
         viewport={{ once: false, amount: 0.1 }}
       >
         <div className=" p-8 px-8 md:px-32  mt-8">
-          <h2 className="font-bold text-center text-3xl dark:text-white/[0.9]">
-            Hard skills
+          <h2 className="font-bold text-center text-3xl dark:text-white/[0.9] mb-4">
+            {t("hard_skills")}
           </h2>
           <p className="text-center text-sm text-gray-500 mb-10">
-            Technical abilities
+            {t("techical")}
           </p>
           <section className="max-w-6xl mx-auto px-4 py-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {hardSkills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="bg-white border-l-4 border-cyan-500 pl-4 py-2 dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
-                >
-                  <h3 className="font-semibold uppercase text-gray-800 text-sm mb-1">
-                    {skill.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">{skill.description}</p>
-                </div>
-              ))}
+              {(languagePage === "en" ? hardSkillsEn : hardSkillsVi).map(
+                (skill, index) => (
+                  <div
+                    key={index}
+                    className="bg-white border-l-4 border-cyan-500 pl-4 py-2 dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
+                  >
+                    <h3 className="font-semibold uppercase text-gray-800 text-sm mb-1">
+                      {skill.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm">{skill.description}</p>
+                  </div>
+                )
+              )}
             </div>
           </section>
         </div>
