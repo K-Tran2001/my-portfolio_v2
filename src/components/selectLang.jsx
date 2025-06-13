@@ -3,12 +3,12 @@ import { useState } from "react";
 const languages = [
   {
     code: "vi",
-    label: "Tiếng Việt",
+    label: "VN",
     flag: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg",
   },
   {
     code: "en",
-    label: "English",
+    label: "EN",
     flag: "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
   },
 ];
@@ -24,10 +24,10 @@ const Select = ({ lang, callback }) => {
   };
 
   return (
-    <div className="p-4 flex flex-col gap-4  max-w-[200px] ">
+    <div className="relative p-4 flex flex-col gap-4  max-w-[200px] ">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="select-button flex gap-2 items-center border border-gray-400 rounded-md p-2"
+        className="select-button flex gap-2 items-center bg-[var(--body-color)] border border-gray-200 rounded-md p-2 h-11 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
       >
         <div className="flex gap-2">
           <img
@@ -40,12 +40,12 @@ const Select = ({ lang, callback }) => {
         <span className="dropdown-icon">▼</span>
       </button>
       {isOpen && (
-        <ul className="select-dropdown">
+        <ul className="select-dropdown dark:bg-gray-700 bg-gray-300 rounded-sm -mt-6 pt-2 -z-10">
           {languages.map((lang) => (
             <li
               key={lang.code}
               onClick={() => handleSelect(lang.code)}
-              className="flex gap-2 p-2"
+              className="flex gap-2 p-2 dark:border-gray-800 dark:text-gray-400"
             >
               <img
                 src={lang.flag}

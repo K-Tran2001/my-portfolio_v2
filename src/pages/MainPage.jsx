@@ -21,6 +21,7 @@ import Drawer from "../components/Drawer";
 import { MainContext } from "../context/MainContext";
 
 import { IoCloseOutline } from "react-icons/io5";
+import { ThemeToggleButton } from "../components/common/ThemeToggleButton";
 
 const MainPage = () => {
   const { t, changeLanguage, lang } = useTranslate();
@@ -49,13 +50,14 @@ const MainPage = () => {
       <Pointer />
       <Particle />
       <Drawer>
-        <div className=" h-[100vh-80px]   flex flex-col  items-center gap-4 py-8">
+        <div className=" h-[100vh-80px]   flex flex-col  items-center gap-4 py-8 dark:text-white/[0.9]">
           {navData.map((item) => (
             <a
               key={Math.random()}
               className={`${
-                tab === item && "bg-black text-white"
-              } p-1 px-3 hover:bg-black hover:text-white rounded-full font-medium cursor-pointer`}
+                tab === item &&
+                "bg-black text-white dark:bg-white/[0.9] dark:text-black/[0.8]"
+              } p-1 px-3 hover:bg-black dark:hover:bg-white/[0.9] dark:hover:text-black/[0.8] hover:text-white rounded-full font-medium cursor-pointer`}
               onClick={() => {
                 setDrawer({ ...drawer, isOpen: false });
                 setTab(item);
@@ -64,28 +66,32 @@ const MainPage = () => {
               {item}
             </a>
           ))}
+          <div className="lg:hidden block   m-auto">
+            <ThemeToggleButton />
+          </div>
           <Select callback={(e) => changeLanguage(e)} />
         </div>
       </Drawer>
       {/* <Backdrop /> */}
       <nav
         id="header"
-        className="w-full h-[80px] bg-[var(--body-color)] flex itams-center px-16 justify-between sticky top-0 z-10"
+        className="w-full h-[80px] dark:bg-gray-900 bg-[var(--body-color)] flex itams-center px-16 justify-between sticky top-0 z-10"
       >
         <div className="relative flex gap-2 items-center">
-          <p className="text-3xl font-bold text-[var(--text-color-third)]">
+          <p className="text-3xl font-bold dark:text-[var(--third-color)] text-[var(--text-color-third)]">
             KhoaTran
           </p>
-          <span className=" text-4xl">.</span>
+          <span className=" text-4xl dark:text-white/[0.9]">.</span>
         </div>
-        <div className="flex-1 hidden md:block" id="myNavMenu">
-          <div className="h-full flex justify-center gap-4 items-center ">
+        <div className="flex-1 hidden lg:block" id="myNavMenu">
+          <div className="h-full flex justify-center gap-4 items-center dark:text-white/[0.9]">
             {navData.map((item) => (
               <a
                 key={Math.random()}
                 className={`${
-                  tab === item && "bg-black text-white"
-                } p-1 px-3 hover:bg-black hover:text-white rounded-full font-medium cursor-pointer`}
+                  tab === item &&
+                  "bg-black text-white dark:bg-white/[0.9] dark:text-black/[0.8]"
+                } p-1 px-3 hover:bg-black dark:hover:bg-white/[0.9] dark:hover:text-black/[0.8] hover:text-white rounded-full font-medium cursor-pointer`}
                 onClick={() => setTab(item)}
               >
                 {item}
@@ -93,11 +99,14 @@ const MainPage = () => {
             ))}
           </div>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden lg:block   m-auto">
+          <ThemeToggleButton />
+        </div>
+        <div className="hidden lg:block ">
           <Select callback={(e) => changeLanguage(e)} />
         </div>
         <div
-          className="block md:hidden flex items-center"
+          className="block lg:hidden flex items-center"
           onClick={() =>
             setDrawer({
               ...drawer,
@@ -122,7 +131,7 @@ const MainPage = () => {
         {tab === "Contact" && <Contact />}
       </div>
       {/* <!-- --------------- FOOTER --------------- --> */}
-      <footer className="px-16 py-8 flex flex-col justify-center items-center gap-8 bg-[#F8F8F8] fotter__box">
+      <footer className="px-16 py-8 flex flex-col justify-center items-center gap-8 bg-[var(--body-color)] dark:bg-gray-900 dark:text-white/[0.9] fotter__box">
         <div className="">
           <p className="text-xl font-medium">Khoa Tran</p>
         </div>

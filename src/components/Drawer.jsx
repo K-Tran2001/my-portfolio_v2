@@ -12,7 +12,7 @@ const Drawer = ({ children }) => {
   };
 
   return (
-    <div className="relative" id="drawer">
+    <div className="relative " id="drawer">
       {drawer.isOpen && (
         <div
           className=" z-20 fixed inset-0 h-full w-full bg-gray-400/50 backdrop-blur-[32px] opacity-70"
@@ -20,14 +20,16 @@ const Drawer = ({ children }) => {
         ></div>
       )}
       <div
-        id="drawer-navigation"
+        id="drawer-navigation "
         className={` py-8 px-16 z-30 min-w-[500px] fixed  h-screen   overflow-y-auto transition-transform  bg-white w-64 dark:bg-gray-800"
-      aria-labelledby="drawer-navigation-label ${positions[drawer.position]}`}
+      aria-labelledby="drawer-navigation-label ${
+        positions[drawer.position]
+      } dark:bg-gray-900 `}
       >
         <div className="flex items-center justify-between">
           <h5
             id="drawer-navigation-label"
-            className="text-2xl font-semibold text-[--text-color-third] dark:text-gray-400 "
+            className="text-2xl font-semibold text-[--text-color-third] dark:text-[--third-color] "
           >
             KhoaTran
           </h5>

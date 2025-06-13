@@ -35,7 +35,7 @@ const Home = () => {
           <img
             src="https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg"
             alt=""
-            srcset=""
+            srcSet=""
             style={{ objectFit: "cover" }}
             className="rounded-2xl shadow-lg w-auto md:w-[300px] "
           />

@@ -98,7 +98,7 @@ const ProjectView = () => {
             <img
               src={projects[activeIndex].image}
               alt=""
-              srcset=""
+              srcSet=""
               className="w-full h-full absolute object-cover rounded-[20px] hover:scale-[1.1] transition-transform duration-300"
             />
           </div>
@@ -109,7 +109,7 @@ const ProjectView = () => {
             className="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-[20px] hover:scale-[1.1] transition-transform duration-300 ease-in-out absolute top-0 lg:left-0 right-0 shadow-lg "
           /> */}
 
-          <div className="pt-8 lg:pt-0 bg-white min-h-96 rounded-3xl  lg:flex gap-8 items-end justify-end lg:justify-center shadow-lg ">
+          <div className="pt-8 lg:pt-0 bg-white min-h-96 rounded-3xl  lg:flex gap-8 items-end justify-end lg:justify-center shadow-lg dark:border-dark-mode">
             <div className=" lg:w-64 py-8 px-4  block lg:flex items-center justify-end gap-4 space-y-4 lg:space-y-0 ">
               <div className={`${activeIndex === 0 ? "opacity-40" : ""}`}>
                 <button
@@ -166,7 +166,7 @@ const ProjectView = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center dark:text-white/[0.9]">
         <a
           className="p-8 text-center flex-1 "
           href="https://github.com/K-Tran2001"

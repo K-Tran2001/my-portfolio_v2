@@ -13,12 +13,12 @@ import { GiMagicHat } from "react-icons/gi"; // dùng cho Magnus UI
 import { FaGithub } from "react-icons/fa";
 import { SiAdobephotoshop, SiFigma, SiSubversion } from "react-icons/si";
 import { BiLogoVisualStudio } from "react-icons/bi";
-import { motion } from "framer-motion";
 
 import creativityImg from "../assets/images/creativity.jpg";
 import collaborationImg from "../assets/images/collaboration.jpg";
 import communicationImg from "../assets/images/communication.jpg";
 import time_managementImg from "../assets/images/time_management.jpg";
+import { motion } from "framer-motion";
 import { fadeIn } from "../components/framerMotion/variants";
 
 const Skills = () => {
@@ -160,12 +160,12 @@ const Skills = () => {
     scrollTo(0, 0);
   }, []);
   return (
-    <div className="relative  min-h-[calc(100vh-80px)]  bg-gradient-to-tl from-black/60  to-transparent">
+    <div className="relative  min-h-[calc(100vh-80px)]  bg-gradient-to-tl from-black/90  to-transparent dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
       <div className="h-[calc(100vh-350px)] flex items-center justify-center z-30">
         <div className="py-8 flex flex-col justify-center items-center">
-          <div class=" bg-[url('https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg')] bg-cover bg-center text-transparent bg-clip-text ">
+          <div className=" bg-[url('https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg')] bg-cover bg-center text-transparent bg-clip-text ">
             <div className="flex items-center">
-              <div class="text-black   -rotate-90 text-orange-500 text-[3em] md:text-[7em]  font-bold flex items-center justify-center leading-none">
+              <div className="text-black   -rotate-90 text-orange-500 text-[3em] md:text-[7em]  font-bold flex items-center justify-center leading-none">
                 MY
               </div>
 
@@ -175,11 +175,15 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <h3>"Behind every pixel, there's a purpose."</h3>
+          <h3 className="dark:text-white/[0.9]">
+            "Behind every pixel, there's a purpose."
+          </h3>
         </div>
       </div>
       <div className=" p-8 px-8 md:px-32   mt-8 ">
-        <h2 className="font-bold text-center text-3xl">Tools and Platforms</h2>
+        <h2 className="font-bold text-center text-3xl dark:text-white/[0.9]">
+          Tools and Platforms
+        </h2>
         <h2 className="text-center text-sm text-gray-500 mb-10">
           Here are the tools and platforms I regularly use to bring ideas to
           life - form wireframes to polished UI designs
@@ -187,7 +191,7 @@ const Skills = () => {
         <div className="flex gap-2 flex-wrap justify-center ">
           {listTool.map((tool) => (
             <div
-              className="bg-white p-4 px-8 flex gap-4 items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech"
+              className="bg-white p-4 px-8 flex gap-4 items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
               key={tool.id}
             >
               <div className="item__tech__icon">{tool.icon}</div>
@@ -197,7 +201,9 @@ const Skills = () => {
         </div>
       </div>
       <div className=" p-8 px-8 md:px-32   mt-8">
-        <h2 className="font-bold text-center text-3xl">Libraries and Tech</h2>
+        <h2 className="font-bold text-center text-3xl dark:text-white/[0.9]">
+          Libraries and Tech
+        </h2>
         <h2 className="text-center text-sm text-gray-500 mb-10">
           Here are the tools and platforms I regularly use to bring ideas to
           life - form wireframes to polished UI designs
@@ -205,7 +211,7 @@ const Skills = () => {
         <div className="flex gap-2 flex-wrap justify-center ">
           {listLibrary_Tech.map((tool) => (
             <div
-              className="bg-white p-4 px-8 flex gap-4 items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech"
+              className="bg-white p-4 px-8 flex gap-4 items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
               key={tool.id}
             >
               <div className="item__tech__icon">{tool.icon}</div>
@@ -221,7 +227,7 @@ const Skills = () => {
         viewport={{ once: false, amount: 0.1 }}
       >
         <div className=" p-8 px-8 md:px-32   mt-8">
-          <h2 className="font-bold text-center text-3xl">
+          <h2 className="font-bold text-center text-3xl dark:text-white/[0.9]">
             What I bring to the table?
           </h2>
           <p className="text-center text-sm text-gray-500 mb-10">
@@ -232,7 +238,7 @@ const Skills = () => {
               {softSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md hover:shadow-xl rounded-2xl overflow-hidden transition duration-300"
+                  className="bg-white shadow-md hover:shadow-xl rounded-2xl overflow-hidden transition duration-300 dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
                 >
                   <img
                     src={skill.image}
@@ -258,7 +264,9 @@ const Skills = () => {
         viewport={{ once: false, amount: 0.1 }}
       >
         <div className=" p-8 px-8 md:px-32  mt-8">
-          <h2 className="font-bold text-center text-3xl">Hard skills</h2>
+          <h2 className="font-bold text-center text-3xl dark:text-white/[0.9]">
+            Hard skills
+          </h2>
           <p className="text-center text-sm text-gray-500 mb-10">
             Technical abilities
           </p>
@@ -267,7 +275,7 @@ const Skills = () => {
               {hardSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-white border-l-4 border-cyan-500 pl-4 py-2"
+                  className="bg-white border-l-4 border-cyan-500 pl-4 py-2 dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
                 >
                   <h3 className="font-semibold uppercase text-gray-800 text-sm mb-1">
                     {skill.title}

@@ -11,9 +11,9 @@ const About = () => {
     scrollTo(0, 0);
   }, []);
   return (
-    <div className="relative  min-h-[calc(100vh-80px)]  ">
+    <div className="relative  min-h-[calc(100vh-80px)]  dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
       <div className="flex justify-center items-center w-full min-h-48  px-8 py-8 md:px-32 md:py-8 bg-[url('https://t4.ftcdn.net/jpg/02/00/68/69/360_F_200686969_GJ7zbz2qaNIE4dyHSbZkQXvNPzRuwlr3.jpg')] bg-cover bg-center">
-        <h4 className="text-center  text-white text-[3em]">
+        <h4 className="text-center  text-white text-[3em] dark:text-glow-blue ">
           EVERY PIXEL IS A STEP CLOSER TO THE DREAM
         </h4>
       </div>
@@ -25,7 +25,7 @@ const About = () => {
                 <img
                   src="https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530415/q4taatqkde8xdbphtrga.png"
                   alt=""
-                  srcset=""
+                  srcSet=""
                   className="w-12 h-12"
                 />
                 <div>
@@ -38,7 +38,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-12 mx-8 p-4 animate-rote bg-white">
+            <div className="mt-12 mx-8 p-4 animate-rote bg-white dark:bg-transparent dark:text-white/[0.9]">
               <div className="font-bold">-ABOUT ME-</div>
               <h3 className="md:pr-16 pt-4 ">
                 I am a passionate and enthusiastic individual in the field of
@@ -49,11 +49,11 @@ const About = () => {
               </h3>
             </div>
           </div>
-          <div className="p-8 shadow-lg relative bg-white">
+          <div className="p-8 shadow-lg relative bg-white dark:hover:border-dark-mode">
             <img
               src="https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg"
               alt=""
-              srcset=""
+              srcSet=""
               style={{ objectFit: "cover" }}
               className=" w-auto md:w-[300px] "
             />
@@ -67,7 +67,7 @@ const About = () => {
               <img
                 src={bangkeo}
                 alt=""
-                srcset=""
+                srcSet=""
                 style={{ objectFit: "cover" }}
                 className="-rotate-45"
               />
@@ -82,7 +82,7 @@ const About = () => {
               <img
                 src={bangkeo}
                 alt=""
-                srcset=""
+                srcSet=""
                 style={{ objectFit: "cover" }}
                 className=""
               />
@@ -90,15 +90,15 @@ const About = () => {
           </div>
         </div>
         <div className="mt-16 md:px-8">
-          <h3 className="font-bold">-EDUCATION-</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-16 mt-4 ">
+          <h3 className="font-bold dark:text-white/[0.9]">-EDUCATION-</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 mt-4 ">
             <motion.div
               variants={fadeIn("right", 0)}
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.1 }}
             >
-              <div className="bg-gradient-to-br from-red-500 to-blue-500 text-white p-8 rounded-2xl shadow-lg ">
+              <div className="bg-gradient-to-br from-red-500 to-blue-500 text-white p-8 rounded-2xl shadow-lg dark:hover:border-dark-mode min-h-[300px]">
                 <div className="font-bold pb-8">
                   An Giang University - Vietnam National University, Ho Chi Minh
                   City
@@ -123,9 +123,9 @@ const About = () => {
               viewport={{ once: false, amount: 0.1 }}
               className=""
             >
-              <div className="bg-white p-8 rounded-2xl">
+              <div className="bg-white p-8 rounded-2xl dark:hover:border-dark-mode min-h-[300px]">
                 <div>
-                  <h3 className="font-bold">Progress</h3>
+                  <h3 className="font-bold mb-4">Progress</h3>
                   <div>
                     - Ranked among the top of the class with excellent academic
                     performance (GPA: 3.68), achieving perfect scores in
@@ -137,18 +137,16 @@ const About = () => {
                 </div>
               </div>
             </motion.div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-16 mt-4">
             <motion.div
               variants={fadeIn("up", 0)}
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.1 }}
-              className="order-2 md:order-1"
+              className="order-2 lg:order-1"
             >
-              <div className="bg-white p-8 rounded-2xl">
+              <div className="bg-white p-8 rounded-2xl dark:hover:border-dark-mode min-h-[300px]">
                 <div>
-                  <h3 className="font-bold">Progress</h3>
+                  <h3 className="font-bold mb-4">Progress</h3>
                   <div>
                     The website helps promote products and attract more
                     customers, increasing awareness of the company's products
@@ -164,9 +162,9 @@ const About = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.1 }}
-              className="order-1 md:order-2"
+              className="order-1 lg:order-2"
             >
-              <div className="bg-gradient-to-tl from-red-500 to-blue-500 text-white  p-8 rounded-2xl shadow-lg ">
+              <div className="bg-gradient-to-tl from-red-500 to-blue-500 text-white  p-8 rounded-2xl shadow-lg dark:hover:border-dark-mode min-h-[300px]">
                 <div className="font-bold pb-8">TPONE COMPANY LIMITED</div>
                 <div className="text-end">02/2023 - 04/2023</div>
                 <div>
@@ -182,9 +180,9 @@ const About = () => {
           </div>
         </div>
         <div className="mt-16 md:px-8">
-          <h3 className="font-bold">-WORK-</h3>
+          <h3 className="font-bold dark:text-white/[0.9]">-WORK-</h3>
           <div className="mt-8">
-            <div className="p-4 px-8 bg-gradient-to-r to-orange-400 from-purple-500  text-white flex justify-between items-center rounded-l-2xl rounded-tr-2xl">
+            <div className="p-4 px-8 bg-gradient-to-r to-orange-400 from-purple-500  text-white flex justify-between items-center rounded-l-2xl rounded-tr-2xl dark:hover:border-dark-mode">
               <h3 className="font-bold text-2xl">Phoenix Company</h3>
               <h3 className="cursor-pointer" onClick={() => setExpand(!expand)}>
                 {!expand ? <FaAngleDown size={24} /> : <FaAngleUp size={24} />}
@@ -198,11 +196,11 @@ const About = () => {
                 viewport={{ once: false, amount: 0.1 }}
                 className=""
               >
-                <div className=" flex gap-8">
+                <div className=" flex gap-8 ">
                   <h3 className="w-[200px] pl-8 md:block hidden text-[var(--first-color)] text-sm py-4 ">
                     July 2023 - now
                   </h3>
-                  <div className="bg-white p-4  flex flex-1 flex gap-2 justify-between rounded-b-2xl shadow-lg text-sm">
+                  <div className="bg-white p-4  flex flex-1 flex gap-2 justify-between rounded-b-2xl shadow-lg text-sm dark:hover:border-dark-mode">
                     <div>
                       <h3 className="font-bold mb-4">Chuyên các dự án:</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2">
