@@ -10,7 +10,7 @@ export default function Blog() {
     scrollTo(0, 0);
   }, []);
   return (
-    <div className="relative min-h-screen  py-16 px-6 sm:px-12 md:px-24 text-gray-800 font-sans dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
+    <div className="relative min-h-screen  py-16 px-6 sm:px-12 md:px-24 text-gray-800 font-sans bg-gradient-to-br from-emerald-200/60 black to-orange-500/60 dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
       {/* Decorative Floating Bubbles */}
       <div className="absolute top-10 right-10 w-40 h-40 bg-purple-200 rounded-full blur-3xl opacity-30 animate-pulse" />
       <div className="absolute bottom-0 left-0 w-60 h-60 bg-cyan-200 rounded-full blur-3xl opacity-30 animate-ping" />
@@ -49,7 +49,7 @@ export default function Blog() {
 
         {/* Right: Blog content */}
         <motion.div
-          className="space-y-10 bg-white dark:bg-transparent dark:text-white/[0.9] px-8 "
+          className="space-y-10 bg-white/20 dark:bg-transparent dark:text-white/[0.9] px-8 "
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },

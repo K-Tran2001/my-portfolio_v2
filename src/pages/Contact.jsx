@@ -9,7 +9,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <section className=" py-16 px-6 sm:px-12 lg:px-24 dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
+    <section className=" py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-emerald-200/60 black to-orange-500/60 dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
       <div className="text-center mb-12">
         <h2 className="mb-4 text-3xl font-bold text-gray-800 dark:text-white/[0.9]">
           {t("get_in_touch")}
@@ -83,7 +83,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="bg-cyan-500 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-cyan-600 transition-all dark:border-dark-mode"
+              className="bg-black text-white px-6 py-3 rounded-full flex items-center gap-2  transition-all dark:border-dark-mode"
             >
               {t("send")}
               <svg

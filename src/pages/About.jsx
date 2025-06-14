@@ -13,7 +13,7 @@ const About = () => {
     scrollTo(0, 0);
   }, []);
   return (
-    <div className="relative  min-h-[calc(100vh-80px)]  dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
+    <div className="relative  min-h-[calc(100vh-80px)] bg-gradient-to-br from-emerald-200/60 black to-orange-500/60  dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
       <div className="flex justify-center items-center w-full min-h-48  px-8 py-8 md:px-32 md:py-8 bg-[url('https://t4.ftcdn.net/jpg/02/00/68/69/360_F_200686969_GJ7zbz2qaNIE4dyHSbZkQXvNPzRuwlr3.jpg')] bg-cover bg-center">
         <h4 className="text-center  text-white text-[3em] dark:text-glow-blue ">
           {t("every_pixel_is")}
@@ -40,7 +40,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-12 mx-8 p-4 animate-rote bg-white dark:bg-transparent dark:text-white/[0.9]">
+            <div className="mt-12 mx-8 p-4 animate-rote bg-white/20  dark:bg-transparent dark:text-white/[0.9]">
               <div className="font-bold">-{t("about_me")}-</div>
               <h3 className="md:pr-16 pt-4 ">{t("my_introduction_detail")}</h3>
             </div>

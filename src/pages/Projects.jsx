@@ -64,7 +64,7 @@ const Projects = () => {
     scrollTo(0, 0);
   }, []);
   return (
-    <div className="bg-gradient-to-br from-purple-500/50 via-indigo-400/20 to-black/70 backdrop-blur-sm dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
+    <div className="bg-gradient-to-br from-emerald-200/60 black to-orange-500/60  dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
       <div className="py-8 pt-4 px-4 px-8 lg:px-48 ">
         <motion.div
           variants={fadeIn("right", 0)}
@@ -78,7 +78,7 @@ const Projects = () => {
               : listAchievementVi
             ).map((item) => (
               <div
-                className=" p-16 flex flex-col gap-4 justify-center items-center rounded-lg shadow-lg bg-white hover:bg-gradient-to-b to-orange-300 from-purple-600 hover:text-white  transition hover:scale-110 hover:rotate-[10deg] duration-300 dark:border-dark-mode"
+                className=" p-16 flex flex-col gap-4 justify-center items-center rounded-lg shadow-lg bg-white hover:rotate-[2deg] hover:bg-gradient-to-b to-orange-300 from-purple-600 hover:text-white  transition hover:scale-110 lg:hover:rotate-[5deg] duration-300 dark:border-dark-mode"
                 key={Math.random()}
               >
                 {item.icon}

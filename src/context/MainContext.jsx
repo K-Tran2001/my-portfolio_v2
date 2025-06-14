@@ -9,12 +9,15 @@ export const MainProvider = ({ children }) => {
     position: "rightDrawer",
     onConfirm: () => {},
   });
+  //language
   const [languagePage, setLangLanguagePage] = React.useState(() => {
     var lang = localStorage.getItem("@lang");
     if (lang) {
       return lang;
     } else return "en";
   });
+  const navData = ["Home", "About", "Skills", "Projects", "Blog", "Contact"];
+  const [tab, setTab] = React.useState("Home");
 
   return (
     <MainContext.Provider
@@ -23,6 +26,9 @@ export const MainProvider = ({ children }) => {
         setDrawer,
         languagePage,
         setLangLanguagePage,
+        navData,
+        tab,
+        setTab,
       }}
     >
       {children}

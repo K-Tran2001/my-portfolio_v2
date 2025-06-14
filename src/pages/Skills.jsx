@@ -214,7 +214,7 @@ const Skills = () => {
     scrollTo(0, 0);
   }, []);
   return (
-    <div className="relative  min-h-[calc(100vh-80px)]  bg-gradient-to-tl from-black/90  to-transparent dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
+    <div className="relative  min-h-[calc(100vh-80px)]  bg-gradient-to-br from-emerald-200/60 black to-orange-500/60 dark:bg-gradient-to-tr dark:from-black/90 dark:to-black/90">
       <div className="h-[calc(100vh-350px)] flex items-center justify-center z-30">
         <div className="py-8 flex flex-col justify-center items-center">
           <div className=" bg-[url('https://res.cloudinary.com/dd0qffuvy/image/upload/v1735530471/qlobe4np4ja40ttfixg7.jpg')] bg-cover bg-center text-transparent bg-clip-text ">
@@ -236,7 +236,7 @@ const Skills = () => {
         <h2 className="font-bold text-center text-3xl dark:text-white/[0.9] mb-4">
           {t("tools_and_platforms")}
         </h2>
-        <h2 className="text-center text-sm text-gray-500 mb-10">
+        <h2 className="text-center text-sm text-gray-900 dark:text-white/[0.9] mb-10">
           {t("here_are_the_tools")}
         </h2>
         <div className="flex gap-2 flex-wrap justify-center ">
@@ -255,7 +255,7 @@ const Skills = () => {
         <h2 className="font-bold text-center text-3xl dark:text-white/[0.9] mb-4">
           {t("libraries_and_techologies")}
         </h2>
-        <h2 className="text-center text-sm text-gray-500 mb-10">
+        <h2 className="text-center text-sm text-gray-900 dark:text-white/[0.9] mb-10">
           {t("empowered_by_a_modern")}
         </h2>
         <div className="flex gap-2 flex-wrap justify-center ">
@@ -280,7 +280,7 @@ const Skills = () => {
           <h2 className="font-bold text-center text-3xl dark:text-white/[0.9] mb-4">
             {t("what_i_bring")}
           </h2>
-          <p className="text-center text-sm text-gray-500 mb-10">
+          <p className="text-center text-sm text-gray-900 dark:text-white/[0.9] mb-10">
             {t("my_personal_traits")}
           </p>
           <div className="max-w-6xl mx-auto px-4 py-10">
@@ -321,7 +321,7 @@ const Skills = () => {
           <h2 className="font-bold text-center text-3xl dark:text-white/[0.9] mb-4">
             {t("hard_skills")}
           </h2>
-          <p className="text-center text-sm text-gray-500 mb-10">
+          <p className="text-center text-sm text-gray-900 dark:text-white/[0.9] mb-10">
             {t("techical")}
           </p>
           <section className="max-w-6xl mx-auto px-4 py-10">

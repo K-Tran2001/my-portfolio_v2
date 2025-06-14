@@ -255,7 +255,7 @@ const ProjectView = () => {
                 </p>
               </div>
               <div className="flex gap-4 justify-start m-auto">
-                <a className="px-4 py-4 w-[110px] text-white   inline-block bg-gradient-to-br from-orange-400 to-red-500 text-white py-3 text-center rounded-l-2xl shadow-md font-medium  transition">
+                <a className="px-4 py-4 w-[110px] text-white   inline-block bg-black text-white py-3 text-center rounded-l-2xl shadow-md font-medium  transition">
                   {languagePage === "en" ? "Detail" : "Chi tiết"}
                 </a>
                 <a
@@ -265,7 +265,7 @@ const ProjectView = () => {
                     ].link
                   }
                   target="blank"
-                  className="px-4 py-4 w-[110px] text-white   inline-block bg-gradient-to-br from-orange-400 to-red-500 text-white py-3 text-center rounded-r-2xl shadow-md font-medium  transition"
+                  className="px-4 py-4 w-[110px] text-white   inline-block bg-black text-white py-3 text-center rounded-r-2xl shadow-md font-medium  transition"
                 >
                   {languagePage === "en" ? "Preview" : "Xem thử"}
                 </a>
