@@ -239,10 +239,10 @@ const Skills = () => {
         <h2 className="text-center text-sm text-gray-900 dark:text-white/[0.9] mb-10">
           {t("here_are_the_tools")}
         </h2>
-        <div className="flex gap-2 flex-wrap justify-center ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
           {listTool.map((tool) => (
             <div
-              className="bg-white p-4 px-8 flex gap-4 items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
+              className="bg-white p-4  flex gap-4 justify-center items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
               key={tool.id}
             >
               <div className="item__tech__icon">{tool.icon}</div>
@@ -258,10 +258,10 @@ const Skills = () => {
         <h2 className="text-center text-sm text-gray-900 dark:text-white/[0.9] mb-10">
           {t("empowered_by_a_modern")}
         </h2>
-        <div className="flex gap-2 flex-wrap justify-center ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
           {listLibrary_Tech.map((tool) => (
             <div
-              className="bg-white p-4 px-8 flex gap-4 items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
+              className="bg-white p-4  flex gap-4 justify-center items-center  rounded-lg shadow-sm hover:shadow-lg hover:bg-gray-600 hover:text-white item__tech dark:hover:border-dark-mode dark:hover:bg-white dark:hover:text-gray-800"
               key={tool.id}
             >
               <div className="item__tech__icon">{tool.icon}</div>

@@ -155,7 +155,7 @@ const About = () => {
         <div className="mt-16 md:px-8">
           <h3 className="font-bold dark:text-white/[0.9]">-{t("work")}-</h3>
           <div className="mt-8">
-            <div className="p-4 px-8 bg-gradient-to-r to-orange-400 from-purple-500  text-white flex justify-between items-center rounded-l-2xl rounded-tr-2xl dark:hover:border-dark-mode">
+            <div className="p-4 px-8 bg-gradient-to-r to-orange-400 from-purple-500  text-white flex justify-between items-center rounded-t-2xl lg:rounded-l-2xl   dark:hover:border-dark-mode">
               <h3 className="font-bold text-2xl">Phoenix Company</h3>
               <h3 className="cursor-pointer" onClick={() => setExpand(!expand)}>
                 {!expand ? <FaAngleDown size={24} /> : <FaAngleUp size={24} />}
@@ -170,7 +170,7 @@ const About = () => {
                 className=""
               >
                 <div className=" flex gap-8 ">
-                  <h3 className="w-[200px] pl-8 md:block hidden text-[var(--first-color)] text-sm py-4 ">
+                  <h3 className="w-[150px] pl-8 lg:block hidden text-[var(--first-color)] text-sm py-4 ">
                     July 2023 - now
                   </h3>
                   <div className="bg-white p-4  flex flex-1 flex gap-2 justify-between rounded-b-2xl shadow-lg text-sm dark:hover:border-dark-mode">
@@ -192,7 +192,7 @@ const About = () => {
                       <h3 className="italic text-[var(--text-color-third)]">
                         FullStack Dev - Mobile Dev
                       </h3>
-                      <h3 className="pl-8 block md:hidden text-gray-400  text-sm  text-right">
+                      <h3 className="pl-8 block lg:hidden text-gray-400  text-sm  text-right">
                         July 2023 - now
                       </h3>
                     </div>
