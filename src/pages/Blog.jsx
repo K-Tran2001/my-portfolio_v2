@@ -34,7 +34,7 @@ export default function Blog() {
           <h1 className="text-4xl font-sans font-bold text-blue-700 dark:text-orange-400 leading-tight mb-6">
             💻 {t("code_is_passion")}
           </h1>
-          <blockquote className="italic text-gray-600 text-lg border-l-4 border-blue-300 pl-4 dark:text-white/[0.9]">
+          <blockquote className="italic text-gray-900 text-lg border-l-4 border-blue-300 pl-4 dark:text-white/[0.9]">
             “{t("we_dont_just_code")}”
           </blockquote>
 
@@ -49,7 +49,7 @@ export default function Blog() {
 
         {/* Right: Blog content */}
         <motion.div
-          className="space-y-10 bg-white/20 dark:bg-transparent dark:text-white/[0.9] px-8 "
+          className="space-y-10 bg-white/10 dark:bg-transparent dark:text-white/[0.9] px-8 "
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },
@@ -57,14 +57,14 @@ export default function Blog() {
         >
           <Section title={`✨ ${t("my_first_line")}`}>
             <p>
-              {t("i_still_rêmmber")} <Code>console.log("Hello World")</Code>.{" "}
+              {t("i_still_remember")} <Code>console.log("Hello World")</Code>.
               {t("that_tiny_line")}
             </p>
             <FloatingNote>“{t("code_is_the_language")}”</FloatingNote>
           </Section>
 
           <Section title={`🧠 ${t("code_is")}`}>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-white/[0.9]">
+            <ul className="list-disc list-inside space-y-2 text-gray-800 dark:text-white/[0.9]">
               <li>
                 <strong>{t("smooth_ui")}</strong> {t("is_aesthetic")}
               </li>
@@ -101,7 +101,7 @@ export default function Blog() {
 function Section({ title, children }) {
   return (
     <motion.section
-      className="space-y-4"
+      className="space-y-4 text-gray-900 dark:text-white/90"
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

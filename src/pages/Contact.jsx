@@ -1,9 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { fadeIn } from "../components/framerMotion/variants";
 import { motion } from "framer-motion";
 import { useTranslate } from "../hooks/useTranslate";
 const Contact = () => {
   const { t, changeLanguage, lang } = useTranslate();
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const onSubmit = () => {
+    console.log(data);
+
+    if (
+      data?.name?.length == 0 ||
+      data?.email?.length == 0 ||
+      data?.message?.length == 0
+    ) {
+      alert("Nhập thiếu thông tin!!!");
+    }
+  };
   useEffect(() => {
     scrollTo(0, 0);
   }, []);
@@ -61,28 +77,35 @@ const Contact = () => {
           whileInView="show"
           viewport={{ once: false, amount: 0.1 }}
         >
-          <form className="space-y-6">
-            <div className="flex flex-col sm:flex-row gap-4">
+          <div className="space-y-6 ">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 ">
               <input
                 type="text"
                 placeholder={t("name")}
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+                value={data?.name}
+                onChange={(e) => setData({ ...data, name: e.target.value })}
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:outline-none"
               />
               <input
                 type="email"
                 placeholder="Email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+                value={data?.email}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:outline-none"
               />
             </div>
 
             <textarea
               rows="6"
               placeholder={t("message")}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-cyan-400 focus:outline-none resize-none"
+              value={data?.message}
+              onChange={(e) => setData({ ...data, message: e.target.value })}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:outline-none resize-none"
             ></textarea>
 
             <button
               type="submit"
+              onClick={onSubmit}
               className="bg-black text-white px-6 py-3 rounded-full flex items-center gap-2  transition-all dark:border-dark-mode"
             >
               {t("send")}
@@ -100,7 +123,7 @@ const Contact = () => {
                 />
               </svg>
             </button>
-          </form>
+          </div>
         </motion.div>
       </div>
     </section>

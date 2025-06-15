@@ -42,7 +42,7 @@ const Navbar = () => {
 
       <nav
         id="header"
-        className="w-full h-[80px] dark:bg-gray-900 bg-[var(--body-color)] flex itams-center px-16 justify-between sticky top-0 z-10"
+        className="w-full h-[80px] dark:bg-gray-900 bg-[var(--body-color)] flex itams-center px-8 lg:px-16 justify-between sticky top-0 z-10"
       >
         <div className="relative flex gap-2 items-center">
           <p className="text-3xl font-bold dark:text-[var(--third-color)] text-[var(--text-color-third)]">
