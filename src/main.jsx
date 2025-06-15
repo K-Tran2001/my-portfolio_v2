@@ -11,7 +11,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider>
       <MainProvider>
-        {/* <Particle /> */}
+        <Particle />
         {/* <GradientAnimationBG /> */}
         <App />
       </MainProvider>

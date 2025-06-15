@@ -21,7 +21,7 @@ const Drawer = ({ children }) => {
       )}
       <div
         id="drawer-navigation "
-        className={` py-8 px-16 z-30 md:min-w-[500px] fixed  h-screen   overflow-y-auto transition-transform  bg-white w-full md:w-64 dark:bg-gray-800"
+        className={` py-8 px-8 md:px-16 z-30  fixed  h-screen   overflow-y-auto transition-transform  bg-white w-full md:w-96  dark:bg-red-800"
       aria-labelledby="drawer-navigation-label ${
         positions[drawer.position]
       } dark:bg-gray-900 `}

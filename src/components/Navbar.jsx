@@ -33,7 +33,7 @@ const Navbar = () => {
               {item}
             </a>
           ))}
-          <div className="lg:hidden block   m-auto">
+          <div className="   m-auto">
             <ThemeToggleButton />
           </div>
           <Select callback={(e) => changeLanguage(e)} />
