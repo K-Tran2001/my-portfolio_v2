@@ -38,7 +38,7 @@ const MainPage = () => {
 
       <Pointer />
       {/* <Backdrop /> */}
-      {/* <Particle /> */}
+      <Particle />
       <Navbar />
 
       {/* <!-- --------------- MAIN --------------- --> */}
