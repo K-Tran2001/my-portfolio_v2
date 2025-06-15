@@ -38,7 +38,7 @@ const MainPage = () => {
 
       <Pointer />
       {/* <Backdrop /> */}
-      {/* <Particle /> */}
+      <Particle />
       <Navbar />
 
       {/* <!-- --------------- MAIN --------------- --> */}
@@ -60,7 +60,7 @@ const MainPage = () => {
             {navData.map((item) => (
               <li
                 key={Math.random()}
-                className="px-4 cursor-pointer text-sm md:text-lg"
+                className="px-2 md:px-4 cursor-pointer text-sm md:text-lg"
                 onClick={() => setTab(item)}
               >
                 {item}
