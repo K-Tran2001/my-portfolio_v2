@@ -171,7 +171,7 @@ const About = () => {
               >
                 <div className=" flex gap-8 ">
                   <h3 className="w-[150px] pl-8 lg:block hidden text-[var(--first-color)] text-sm py-4 ">
-                    July 2023 - now
+                    {t("july2023_to_now")}
                   </h3>
                   <div className="bg-white p-4  flex flex-1 flex gap-2 justify-between rounded-b-2xl shadow-lg text-sm dark:hover:border-dark-mode">
                     <div>
@@ -193,7 +193,7 @@ const About = () => {
                         FullStack Dev - Mobile Dev
                       </h3>
                       <h3 className="pl-8 block lg:hidden text-gray-400  text-sm  text-right">
-                        July 2023 - now
+                        {t("july2023_to_now")}
                       </h3>
                     </div>
                   </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FaBagShopping, FaChevronRight } from "react-icons/fa6";
 import { FiUsers } from "react-icons/fi";
 import { SiOpenbadges } from "react-icons/si";
@@ -12,11 +12,10 @@ import SliderProject_Card from "../components/SliderProject_Card/SliderProject_C
 import SingleProject_v4 from "../components/SingleProject_v4";
 
 import ProjectView from "../components/ProjectView";
-import { useTranslate } from "../hooks/useTranslate";
 import { MainContext } from "../context/MainContext";
+import VariantModal from "../components/VariantModal";
 
 const Projects = () => {
-  const { t } = useTranslate();
   const context = React.useContext(MainContext);
   const { languagePage } = context;
   const listAchievementEn = [

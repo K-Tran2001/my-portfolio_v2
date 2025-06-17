@@ -4,6 +4,7 @@ import CrazyImg3DSlider from "../components/CrazyImg3DSlider/CrazyImg3DSlider";
 import Backdrop from "../components/Backdrop";
 import { AutoSlider } from "../components";
 import { useTranslate } from "../hooks/useTranslate";
+import { TextGenerateEffect } from "../components/ui/TextGenerateEffect";
 
 const Home = () => {
   const { t, changeLanguage, lang } = useTranslate();
@@ -71,7 +72,7 @@ const Home = () => {
 
       {/* Quote section */}
       <div className=" flex ">
-        <div className="z-0 h-full w-full px-6 space-y-16 lg:px-32 py-12 bg-[url('https://image.freepik.com/free-vector/colorful-abstract-wallpaper-design_23-2148452447.jpg')] dark:bg-[url('https://t4.ftcdn.net/jpg/05/21/95/85/360_F_521958580_kNDeJSIB0VUVqJ0n9fUwwubwHTRkn2VS.jpg')] bg-cover bg-center">
+        <div className="z-0 h-full w-full px-6 space-y-16 lg:px-32 py-12 bg-[url('https://t4.ftcdn.net/jpg/05/07/99/69/360_F_507996998_Lo5R84d0eXbiWEBdY8jAT491p8S4oUuX.jpg')] dark:bg-[url('https://t4.ftcdn.net/jpg/05/21/95/85/360_F_521958580_kNDeJSIB0VUVqJ0n9fUwwubwHTRkn2VS.jpg')] bg-cover bg-center">
           <h2 className="text-center lg:text-left text-2xl font-bold text-white dark:text-white/[0.9]">
             {t("getting_started")}
           </h2>
