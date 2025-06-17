@@ -4,7 +4,7 @@ import { MainContext } from "../context/MainContext";
 const languages = [
   {
     code: "vi",
-    label: "VN",
+    label: "VI",
     flag: "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg",
   },
   {
